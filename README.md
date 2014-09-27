@@ -4,18 +4,17 @@
 
 # Web Design & Development
 
-## HTML Basics
+### HTML Basics
 
-## CSS Styling
+### CSS Styling
 
-## JavaScript Fundamentals
+### JavaScript Fundamentals
 
-## JavaScript UI & DOM 
+### JavaScript UI & DOM 
 
-## JavaScript OOP
+### JavaScript OOP
 
-## JavaScript Applications
+### JavaScript Applications
 
-## JavaScript Single-Page Applications
+### JavaScript Single-Page Applications
 
-## Web Design & Development - Exams
