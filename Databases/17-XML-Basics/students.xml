@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students xmlns:students="urn:students">
+    <description>Demo Student - not real</description>
+    <name>Pesho</name>
+    <sex>male</sex>
+    <course>ExampleCourse</course>
+    <birthDate>1.1.1811</birthDate>
+    <phone>111222333</phone>
+    <email>test@test.te</email>
+    <specialty>example</specialty>
+    <facultyNumber>123</facultyNumber>
+    <examsTaken>
+        <exams>
+            <examName>Matematika</examName>
+            <tutor>Slojen</tutor>
+            <score>3</score>
+        </exams>
+        <exam>
+            <examName>Combinatorics</examName>
+            <tutor>prof. Nakov</tutor>
+            <score>4.2</score>
+        </exam>
+    </examsTaken>
+</students>

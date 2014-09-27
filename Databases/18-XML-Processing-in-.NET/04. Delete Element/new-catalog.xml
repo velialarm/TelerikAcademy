@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <albums>
+    <album>
+      <name>Razamanaz</name>
+      <band>Nazareth</band>
+      <year>1973</year>
+      <price>14.99$</price>
+      <artists>
+        <artist>Dan McCafferty</artist>
+        <artist>John Locke</artist>
+        <artist>Billy Rankin</artist>
+        <artist>Manny Charlton</artist>
+      </artists>
+      <songs>
+        <song>
+          <title>Bad Bad Boy</title>
+          <duration>4:00</duration>
+        </song>
+        <song>
+          <title>Sold My Soul</title>
+          <duration>6:30</duration>
+        </song>
+        <song>
+          <title>Night Woman</title>
+          <duration>5:00</duration>
+        </song>
+      </songs>
+    </album>
+  </albums>
+</catalog>

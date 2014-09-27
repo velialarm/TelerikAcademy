@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<phonebook>
+  <persons>
+    <person>
+      <name>Mimi Shmatkata</name>
+      <address>Plovdiv</address>
+      <phone-number>0888 12 34 56</phone-number>
+    </person>
+    <person>
+      <name>Kireto</name>
+      <address>Varna</address>
+      <phone-number>052 23 45 67</phone-number>
+    </person>
+    <person>
+      <name>Kireto Peshov</name>
+      <address>Plovdiv</address>
+      <phone-number>051 25 46 27</phone-number>
+    </person>
+    <person>
+      <name>Mimi Loshata</name>
+      <address>Plovdiv</address>
+      <phone-number>0888 12 34 56</phone-number>
+    </person>
+    <person>
+      <name>kIReto</name>
+      <address>Plovdiv</address>
+      <phone-number>051 25 46 27</phone-number>
+    </person>
+    <person>
+      <name>Daniela Ivanova Petrova</name>
+      <address>Karnobat</address>
+      <phone-number>0899 999 888</phone-number>
+    </person>
+    <person>
+      <name>Bat Gancho</name>
+      <address>Sofia</address>
+      <phone-number>02 946 946 946</phone-number>
+    </person>
+  </persons>
+</phonebook>

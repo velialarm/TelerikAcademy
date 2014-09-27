@@ -1,0 +1,32 @@
+﻿<Window x:Class="Chat.WindowClient.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="92" Width="474" Icon="Images/chat-logo.png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox 
+            x:Name="LoginName" 
+            HorizontalAlignment="Left" 
+            Height="23" 
+            Margin="10,19,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="233" 
+            ToolTip="Enter your username"/>
+        <Button 
+            Content="Login" 
+            HorizontalAlignment="Left" 
+            Margin="265,19,0,0" 
+            VerticalAlignment="Top" 
+            Width="85" 
+            Height="23"
+            Click="btnClickLogin"/>
+        <Button 
+            Content="Cancel" 
+            HorizontalAlignment="Left" 
+            Margin="370,19,0,0" 
+            VerticalAlignment="Top" 
+            Width="85" 
+            Height="23"
+            Click="btnClickCnacel"/>
+    </Grid>
+</Window>

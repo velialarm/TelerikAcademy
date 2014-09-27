@@ -1,0 +1,143 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelModule", "ExcelModule\ExcelModule.csproj", "{D2FC6062-9F38-400A-BFE6-EF3674032B90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFModule", "PDFModule\PDFModule.csproj", "{3E7ADF48-DA4A-4971-A13D-9852D01A14CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLModule", "XMLModule\XMLModule.csproj", "{2171AA91-728F-4243-B557-CEB1A575FAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLModule", "SQLModule\SQLModule.csproj", "{EDBCDFAE-6579-49DD-AB86-B151BE9EB55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQLModule", "MySQLModule\MySQLModule.csproj", "{B2900BA7-584D-4CE3-8900-624A49145838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoModule", "MongoModule\MongoModule.csproj", "{A041D6EE-CB2D-4975-904A-8F0177E08399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientModule", "ClientModule\ClientModule.csproj", "{323C643C-E023-4F4F-8E12-65568B3DBB0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipReportLoad", "Report\ZipReportLoad.csproj", "{CD546EFE-1157-473B-A247-68B8B5B30A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerData", "ContainerData\ContainerData.csproj", "{34366470-B71C-40E4-A99C-ACFC252E05E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfluxTool", "ConfluxTool", "{282FB8D2-05BF-4737-AC48-780A7523A4F7}"
+	ProjectSection(SolutionItems) = preProject
+		base_schema_teamwork.sql = base_schema_teamwork.sql
+		clean-database.sql = clean-database.sql
+		insertSomeData.sql = insertSomeData.sql
+		repairedMongoDatabaseFile.xml = repairedMongoDatabaseFile.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conflux.Model", "Conflux.Model\Conflux.Model.csproj", "{D974EE06-ABC3-4CB1-9F51-3E0E0D856E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conflux.Data", "Conflux.Data\Conflux.Data.csproj", "{1D7D1BD2-31EF-43D8-8F33-22B391486C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonModule", "JsonModule\JsonModule.csproj", "{D7F93B2B-54C5-4CA3-84AA-E9918094141C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A7F6309C-09D8-4D93-8D59-D99C69B76F77}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs37
+		SccProjectUniqueName0 = Conflux.Model\\Conflux.Model.csproj
+		SccProjectName0 = Conflux.Model
+		SccLocalPath0 = Conflux.Model
+		SccProjectUniqueName1 = Report\\ZipReportLoad.csproj
+		SccProjectName1 = Report
+		SccLocalPath1 = Report
+		SccProjectUniqueName2 = PDFModule\\PDFModule.csproj
+		SccProjectName2 = PDFModule
+		SccLocalPath2 = PDFModule
+		SccProjectUniqueName3 = SQLModule\\SQLModule.csproj
+		SccProjectName3 = SQLModule
+		SccLocalPath3 = SQLModule
+		SccProjectUniqueName4 = MySQLModule\\MySQLModule.csproj
+		SccProjectName4 = MySQLModule
+		SccLocalPath4 = MySQLModule
+		SccProjectUniqueName5 = MongoModule\\MongoModule.csproj
+		SccProjectName5 = MongoModule
+		SccLocalPath5 = MongoModule
+		SccProjectUniqueName6 = ClientModule\\ClientModule.csproj
+		SccProjectName6 = ClientModule
+		SccLocalPath6 = ClientModule
+		SccProjectUniqueName7 = ContainerData\\ContainerData.csproj
+		SccProjectName7 = ContainerData
+		SccLocalPath7 = ContainerData
+		SccProjectUniqueName8 = Conflux.Data\\Conflux.Data.csproj
+		SccProjectName8 = Conflux.Data
+		SccLocalPath8 = Conflux.Data
+		SccLocalPath9 = .
+		SccProjectUniqueName10 = ExcelModule\\ExcelModule.csproj
+		SccProjectName10 = ExcelModule
+		SccLocalPath10 = ExcelModule
+		SccProjectUniqueName11 = XMLModule\\XMLModule.csproj
+		SccProjectName11 = XMLModule
+		SccLocalPath11 = XMLModule
+		SccProjectUniqueName12 = JsonModule\\JsonModule.csproj
+		SccProjectName12 = JsonModule
+		SccLocalPath12 = JsonModule
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2FC6062-9F38-400A-BFE6-EF3674032B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FC6062-9F38-400A-BFE6-EF3674032B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FC6062-9F38-400A-BFE6-EF3674032B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FC6062-9F38-400A-BFE6-EF3674032B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7ADF48-DA4A-4971-A13D-9852D01A14CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7ADF48-DA4A-4971-A13D-9852D01A14CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7ADF48-DA4A-4971-A13D-9852D01A14CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7ADF48-DA4A-4971-A13D-9852D01A14CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2171AA91-728F-4243-B557-CEB1A575FAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2171AA91-728F-4243-B557-CEB1A575FAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2171AA91-728F-4243-B557-CEB1A575FAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2171AA91-728F-4243-B557-CEB1A575FAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDBCDFAE-6579-49DD-AB86-B151BE9EB55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDBCDFAE-6579-49DD-AB86-B151BE9EB55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDBCDFAE-6579-49DD-AB86-B151BE9EB55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDBCDFAE-6579-49DD-AB86-B151BE9EB55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2900BA7-584D-4CE3-8900-624A49145838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2900BA7-584D-4CE3-8900-624A49145838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2900BA7-584D-4CE3-8900-624A49145838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2900BA7-584D-4CE3-8900-624A49145838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A041D6EE-CB2D-4975-904A-8F0177E08399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A041D6EE-CB2D-4975-904A-8F0177E08399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A041D6EE-CB2D-4975-904A-8F0177E08399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A041D6EE-CB2D-4975-904A-8F0177E08399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323C643C-E023-4F4F-8E12-65568B3DBB0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323C643C-E023-4F4F-8E12-65568B3DBB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323C643C-E023-4F4F-8E12-65568B3DBB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323C643C-E023-4F4F-8E12-65568B3DBB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD546EFE-1157-473B-A247-68B8B5B30A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD546EFE-1157-473B-A247-68B8B5B30A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD546EFE-1157-473B-A247-68B8B5B30A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD546EFE-1157-473B-A247-68B8B5B30A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34366470-B71C-40E4-A99C-ACFC252E05E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34366470-B71C-40E4-A99C-ACFC252E05E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34366470-B71C-40E4-A99C-ACFC252E05E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34366470-B71C-40E4-A99C-ACFC252E05E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D974EE06-ABC3-4CB1-9F51-3E0E0D856E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D974EE06-ABC3-4CB1-9F51-3E0E0D856E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D974EE06-ABC3-4CB1-9F51-3E0E0D856E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D974EE06-ABC3-4CB1-9F51-3E0E0D856E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7D1BD2-31EF-43D8-8F33-22B391486C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7D1BD2-31EF-43D8-8F33-22B391486C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7D1BD2-31EF-43D8-8F33-22B391486C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7D1BD2-31EF-43D8-8F33-22B391486C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7F93B2B-54C5-4CA3-84AA-E9918094141C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F93B2B-54C5-4CA3-84AA-E9918094141C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F93B2B-54C5-4CA3-84AA-E9918094141C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F93B2B-54C5-4CA3-84AA-E9918094141C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

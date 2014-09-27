@@ -1,0 +1,31 @@
+﻿Connection string for "Company" database: .\SQLEXPRESS
+
+
+Connection string for "Cars" database: .\SQLEXPRESS
+in app.config I use - 
+<add name="CarsConnection" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Cars;Integrated Security=True" providerName="System.Data.SqlClient" />
+(if you work with .\ pleace change it in app.config file)
+
+
+Relationships for "Company" database: 
+Employer - EmployerManager -> Many to One (one employer can has more managers)
+Employer-Department -> Many to One (each employer can has only one department access with ManagerId)
+Employer - Project -> Many to Many (each of thme can has many of other)
+Employer-Report -> One To Many (each employer cah has many report)
+
+
+Relationships for "Cars" database: 
+Car - Manufacturer -> Many to One (each car has only one manufature)
+Car - Dealer -> Many to One (each car has only one dealer)
+Dealer - City -> One to Many (dealer can has many cities)
+
+Query files: 
+query files are in folder "Problem 3" and "Problem 4"
+
+
+Problem 6. Parse json file and insert data to databse 
+-> you can found like method ImportJsonData in default class Program
+
+NOTE: 
+Beacause max file of sending file is 35 I remove some packege - Please update project to normaly work
+

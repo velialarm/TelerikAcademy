@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{323C643C-E023-4F4F-8E12-65568B3DBB0C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClientModule</RootNamespace>
+    <AssemblyName>ClientModule</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StartupClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Conflux.Data\Conflux.Data.csproj">
+      <Project>{1d7d1bd2-31ef-43d8-8f33-22b391486c7c}</Project>
+      <Name>Conflux.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Conflux.Model\Conflux.Model.csproj">
+      <Project>{d974ee06-abc3-4cb1-9f51-3e0e0d856e4e}</Project>
+      <Name>Conflux.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ContainerData\ContainerData.csproj">
+      <Project>{34366470-b71c-40e4-a99c-acfc252e05e7}</Project>
+      <Name>ContainerData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelModule\ExcelModule.csproj">
+      <Project>{d2fc6062-9f38-400a-bfe6-ef3674032b90}</Project>
+      <Name>ExcelModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JsonModule\JsonModule.csproj">
+      <Project>{d7f93b2b-54c5-4ca3-84aa-e9918094141c}</Project>
+      <Name>JsonModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MongoModule\MongoModule.csproj">
+      <Project>{a041d6ee-cb2d-4975-904a-8f0177e08399}</Project>
+      <Name>MongoModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySQLModule\MySQLModule.csproj">
+      <Project>{b2900ba7-584d-4ce3-8900-624a49145838}</Project>
+      <Name>MySQLModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDFModule\PDFModule.csproj">
+      <Project>{3e7adf48-da4a-4971-a13d-9852d01a14ca}</Project>
+      <Name>PDFModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\ZipReportLoad.csproj">
+      <Project>{cd546efe-1157-473b-a247-68b8b5b30a64}</Project>
+      <Name>ZipReportLoad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLModule\SQLModule.csproj">
+      <Project>{edbcdfae-6579-49dd-ab86-b151be9eb55e}</Project>
+      <Name>SQLModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XMLModule\XMLModule.csproj">
+      <Project>{2171aa91-728f-4243-b557-ceb1a575fae0}</Project>
+      <Name>XMLModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
