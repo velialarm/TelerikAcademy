@@ -12,7 +12,7 @@
 - JavaScript Applications
 - JavaScript Single-Page Applications
 
-# Programing with C#
+# Programing with C Sharp
 - Data Structure and Algoritms
 
 # Hybrid Mobile Applications
