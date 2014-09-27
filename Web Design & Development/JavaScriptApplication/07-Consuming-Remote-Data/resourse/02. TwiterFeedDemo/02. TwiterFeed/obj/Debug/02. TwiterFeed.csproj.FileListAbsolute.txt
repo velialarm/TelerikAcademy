@@ -1,0 +1,12 @@
+C:\Projects\Telerik_HW_2013-2014\JavaScript Applications\03. AccessRemoteData\02. TwiterFeed\02. TwiterFeed\bin\_02.TwiterFeed.dll.config
+C:\Projects\Telerik_HW_2013-2014\JavaScript Applications\03. AccessRemoteData\02. TwiterFeed\02. TwiterFeed\bin\_02.TwiterFeed.dll
+C:\Projects\Telerik_HW_2013-2014\JavaScript Applications\03. AccessRemoteData\02. TwiterFeed\02. TwiterFeed\bin\_02.TwiterFeed.pdb
+C:\Projects\Telerik_HW_2013-2014\JavaScript Applications\03. AccessRemoteData\02. TwiterFeed\02. TwiterFeed\obj\Debug\02. TwiterFeed.csprojResolveAssemblyReference.cache
+C:\Projects\Telerik_HW_2013-2014\JavaScript Applications\03. AccessRemoteData\02. TwiterFeed\02. TwiterFeed\obj\Debug\_02.TwiterFeed.dll
+C:\Projects\Telerik_HW_2013-2014\JavaScript Applications\03. AccessRemoteData\02. TwiterFeed\02. TwiterFeed\obj\Debug\_02.TwiterFeed.pdb
+C:\Users\NasC0\Desktop\02. TwiterFeedDemo\02. TwiterFeed\bin\_02.TwiterFeed.dll.config
+C:\Users\NasC0\Desktop\02. TwiterFeedDemo\02. TwiterFeed\bin\_02.TwiterFeed.dll
+C:\Users\NasC0\Desktop\02. TwiterFeedDemo\02. TwiterFeed\bin\_02.TwiterFeed.pdb
+C:\Users\NasC0\Desktop\02. TwiterFeedDemo\02. TwiterFeed\obj\Debug\02. TwiterFeed.csprojResolveAssemblyReference.cache
+C:\Users\NasC0\Desktop\02. TwiterFeedDemo\02. TwiterFeed\obj\Debug\_02.TwiterFeed.dll
+C:\Users\NasC0\Desktop\02. TwiterFeedDemo\02. TwiterFeed\obj\Debug\_02.TwiterFeed.pdb

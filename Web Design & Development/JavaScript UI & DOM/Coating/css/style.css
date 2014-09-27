@@ -1,0 +1,53 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.coatingContainerStyle {
+    background-color: #ccc;
+    width: 850px;
+    padding: 15px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.coatingContainerStyle.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.tabContainerCoat .tabCoat{
+	border: 1px solid red;
+	min-height: 200px;
+	padding-top: 10px;
+	margin: 5px 0px;
+}
+
+.coatingContainerStyle .schemaCoatingStyle {
+    float: left;
+    width: 400px;
+	border: 1px solid black;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+.coatingContainerStyle .calcilateAreaCoatingStyle {
+    float: left;
+    width: 400px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.coatingContainerStyle .tabHeader ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.coatingContainerStyle .tabHeader ul li{
+	display: inline-block;
+	border: 1px solid black;
+	padding: 5px 15px;
+	white-space: nowrap;
+	cursor: pointer;
+}

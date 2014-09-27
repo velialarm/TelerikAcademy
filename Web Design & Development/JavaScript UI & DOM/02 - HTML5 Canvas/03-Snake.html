@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTML5 Canvas: 3</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 3. Create the famous game "Snake
+			<ul>
+				<li>The snake is a sequence of rectangles/ellipses</li>
+				<li>The snake can move left, right, up or down</li>
+				<li>The snake dies if it reaches any of the edges or when it
+					tries to eat itself</li>
+				<li>A food should be generated
+					<ul>
+						<li>When the snake eats the food, it grows and new food is
+							generated at random position</li>
+					</ul>
+				</li>
+				<li>Implement a high-score board, kept in localStorage</li>
+			</ul>
+		</div>
+
+		<div id="start-game-btn" class="btnSend" style="float: left;">
+			<a href="#">START</a>
+		</div>
+		<div id="stop-game-btn" class="btnSend"
+			style="float: right; margin-right: 10px;">
+			<a href="#">STOP</a>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="drawContainer">
+			<canvas id="canvas-content" width="820" height="340"
+				style="border: solid 1px black; background-color: #FFF;">
+				You Browser cannot use canvas!
+			</canvas>
+		</div>
+
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var games = (function () {
+
+	function Game(renderer) {
+		this.renderer = renderer;
+		this.snake = new snakes.get(250, 250, 25);
+		this.bindKeyEvents();
+		this.state = "stopped";
+	}
+
+	function animationFrame() {
+		var snakePosition = theGame.snake.getPosition(),
+			toChangePosition = false,
+			newX = snakePosition.x,
+			newY = snakePosition.y;
+
+		if (snakePosition.x < dimensions.minWidth) {
+			newX = dimensions.maxWidth;
+			toChangePosition = true;
+		} else if (dimensions.maxWidth < snakePosition.x) {
+			newX = dimensions.minWidth;
+			toChangePosition = true;
+		}
+		if (snakePosition.y < dimensions.minHeight) {
+			newY = dimensions.maxHeight;
+			toChangePosition = true;
+		}
+		if (dimensions.maxHeight < snakePosition.y) {
+			newY = dimensions.minHeight;
+			toChangePosition = true;
+		}
+		if (toChangePosition) {
+			theGame.snake.changePosition(newX, newY);
+		}
+		theGame.renderer.clear();
+		theGame.snake.move();
+		theGame.renderer.draw(theGame.snake);
+	
+		if (theGame.state === "running") {
+			setTimeout(function() {
+				requestAnimationFrame(animationFrame);
+			},1000/fps);
+		}
+	}
+
+	var dimensions;
+	var fps = 15; //TODO
+	Game.prototype = {
+		start: function () {
+			theGame = this;
+			requestAnimationFrame(animationFrame);
+			dimensions = this.renderer.getDimensions();
+			this.state = "running";
+		},
+		stop: function () {
+			theGame.state = "stopped";
+		},
+		bindKeyEvents: function () {
+			var self = this;
+			document.body.addEventListener("keydown", function (ev) {
+				var keyCode = ev.keyCode;
+				if (37 <= keyCode && keyCode <= 40) {
+					self.snake.changeDirection(keyCode - 37);
+				}
+			});
+		},
+		getState: function () {
+			return this.state;
+		},
+		changeRenderer: function (newRenderer) {
+			this.renderer = newRenderer;
+		}
+	}
+
+	return {
+		get: function (renderer) {
+			return new Game(renderer);
+		}
+	};
+}());
+
+var snakes = (function () {
+	var snakePartSize = 15;
+
+	var directions = [	{ dx: -1, dy: 0}, 
+	              		{dx: 0, dy: -1}, 
+	              		{dx: +1, dy: 0},
+	              		{dx: 0, dy: +1}];
+
+	function GameObject(x, y, size) {
+		this.x = x;
+		this.y = y;
+		this.size = size;
+	}
+
+	GameObject.prototype = {
+		getPosition: function () {
+			return {
+				x: this.x,
+				y: this.y
+			};
+		},
+		getSize: function () {
+			return this.size;
+		}
+	};
+
+	function SnakePart(x, y, size) {
+		GameObject.call(this, x, y, size);
+	}
+
+	SnakePart.prototype = new GameObject();
+	SnakePart.prototype.constructor = SnakePart;
+
+	SnakePart.prototype.changePosition = function (x, y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	function HeadSnakePart(x, y, size) {
+		SnakePart.call(this, x, y, size);
+	}
+
+	HeadSnakePart.prototype = new SnakePart();
+	HeadSnakePart.prototype.constructor = HeadSnakePart;
+
+	function Snake(x, y, size) {
+		var part = null,
+			partX,
+			partY;
+		this.parts = [];
+		this.direction = 2;
+		for (var i = 0; i < size; i++) {
+			partX = x - i * snakePartSize;
+			partY = y;
+			part = new SnakePart(partX, partY, snakePartSize);
+			this.parts.push(part);
+		}
+	}
+
+	Snake.prototype = new GameObject();
+	Snake.prototype.constructor = Snake;
+
+	Snake.prototype.head = function () {
+		return this.parts[0];
+	}
+
+	Snake.prototype.move = function () {
+		var x, y;
+		var dx, dy, size;
+		for (var i = this.parts.length - 1; i >= 1; i--) {
+			var position = this.parts[i - 1].getPosition();
+			this.parts[i].changePosition(position.x, position.y);
+		}
+		var head = this.head();
+		var dx = directions[this.direction].dx;
+		var dy = directions[this.direction].dy;
+		var headPosition = head.getPosition();
+		var newHeadPosition = {
+			x: headPosition.x + head.size * dx,
+			y: headPosition.y + head.size * dy
+		};
+		head.changePosition(newHeadPosition.x, newHeadPosition.y);
+	}
+
+	Snake.prototype.changeDirection = function (newDirection) {
+		if (newDirection >= 0 && newDirection < directions.length &&
+			(this.direction + newDirection) % 2) {
+			this.direction = newDirection;
+		}
+	}
+
+	Snake.prototype.getPosition = function () {
+		return this.head().getPosition();
+	}
+
+	Snake.prototype.changePosition = function (x, y) {
+		this.head().changePosition(x, y);
+	}
+
+	function Wall(x, y, size) {
+		GameObject.call(this, x, y, size);
+	}
+
+	Wall.prototype = new GameObject();
+	Wall.prototype.constructor = Wall;
+
+	function Food(x, y, size) {
+		GameObject.call(this, x, y, size);
+	}
+
+	Food.prototype = new GameObject();
+	Food.prototype.constructor = Food;
+
+	return {
+		get: function (x, y, size) {
+			return new Snake(x, y, size);
+		},
+		getFood: function (x, y, size) {
+			return new Food(x, y, size);
+		},
+		SnakeType: Snake,
+		SnakePartType: SnakePart,
+		HeadSnakePartType: HeadSnakePart,
+		FoodType: Food,
+		WallType: Wall
+	};
+}());
+
+var renderers = (function () {
+	var drawSnake = function (canvas, snake) {
+		for (var i = 0; i < snake.parts.length; i++) {
+			drawSnakePart(canvas, snake.parts[i]);
+		}
+	};
+
+	var drawSnakePart = function (canvas, part) {
+		var ctx = canvas.getContext("2d");
+		if (part instanceof snakes.HeadSnakePartType) {
+			ctx.fillStyle = "black";
+			ctx.strokeStyle = "black";
+		} else if (part instanceof snakes.SnakePartType) {
+			ctx.fillStyle = "orange";
+			ctx.strokeStyle = "black";
+		}
+		var position = part.getPosition();
+		ctx.fillRect(position.x, position.y, part.size, part.size);
+		ctx.strokeRect(position.x, position.y, part.size, part.size);
+	}
+
+	var drawFood = function (canvas, food) {
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "green";
+		var position = food.getPosition();
+		ctx.fillRect(position.x, position.y, food.size, food.size);
+		ctx.strokeStyle = "black";
+		ctx.strokeRect(position.x, position.y, food.size, food.size);
+	};
+	
+	var drawWall = function (canvas, wall) {
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "black";
+		var position = wall.getPosition();
+		ctx.fillRect(position.x, position.y, wall.size, wall.size);
+		ctx.strokeStyle = "black";
+		ctx.strokeRect(position.x, position.y, part.size, part.size);
+	};
+
+	function CanvasRenderer(selector) {
+		if (selector instanceof HTMLCanvasElement) {
+			this.canvas = selector;
+		} else if (typeof selector === "String" ||
+			typeof selector === "string") {
+			this.canvas = document.querySelector(selector);
+		}
+	}
+
+	CanvasRenderer.prototype = {
+		draw: function (obj) {
+			if (obj instanceof snakes.SnakeType) {
+				drawSnake(this.canvas, obj);
+			} else if (obj instanceof snakes.SnakePartType) {
+				drawSnakePart(this.canvas, obj);
+			} else if (obj instanceof snakes.FoodType) {
+				drawFood(this.canvas, obj);
+			} else if (obj instanceof snakes.WallType) {
+				drawWall(this.canvas, obj);
+			}
+		},
+		clear: function () {
+			var ctx = this.canvas.getContext("2d");
+			var w = this.canvas.width;
+			var h = this.canvas.height;
+			ctx.clearRect(0, 0, w, h);
+		},
+		fps: 20,
+		getDimensions: function () {
+			return {
+				minWidth: 0,
+				maxWidth: this.canvas.width,
+				minHeight: 0,
+				maxHeight: this.canvas.height
+			};
+		}
+	};
+
+	return {
+		getCanvas: function (selector) {
+			return new CanvasRenderer(selector);
+		}
+	};
+	
+})();
+
+(function() {
+	'use strict';
+	var canvas = document.getElementById("canvas-content"),
+	startButton = document.getElementById("start-game-btn"),
+	stopButton = document.getElementById("stop-game-btn"),
+	canvasRenderer = renderers.getCanvas(canvas);
+	var game = games.get(canvasRenderer);
+	stopButton.disabled = true;
+	
+	startButton.addEventListener("click", function (ev) {
+		console.log("Clicked on START button");
+		startButton.disabled = true;
+		stopButton.disabled = false;
+		game.start();
+	});
+
+	stopButton.addEventListener("click", function () {
+		console.log("Clicked on STOP button");
+		startButton.disabled = false;
+		stopButton.disabled = true;
+		game.stop();
+	});	
+	
+	if (canvas.getContext) {
+		var widthCanvas = canvas.getAttribute("width"),
+		heigthCanvas = canvas.getAttribute("height"),
+		ctx = canvas.getContext('2d'),
+		fillColor = "#FF0000",
+		strokeColor = "#003300",
+		setBackground = function (color){
+			ctx.beginPath();
+			ctx.fillStyle = color;
+			ctx.fillRect(0, 0, widthCanvas, heigthCanvas);
+			ctx.closePath();
+		};
+		setBackground("#FFF");   
+
+	}
+})();
+
+	</script>
+	<!-- END TASK CODE	 -->
+
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

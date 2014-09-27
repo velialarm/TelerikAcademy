@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Document Object Model: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Create a simple number guessing game
+			<ul>
+				<li>The computer generates a random number with four different
+					digits
+					<ul>
+						<li>The leftmost digit must not be 0 (zero)</li>
+						<li>For simplicity called <strong>abcd</strong></li>
+					</ul>
+				</li>
+				<li>At each turn the player enters a four-digit number
+					<ul>
+						<li>For simplicity called <strong>xyzw</strong></li>
+					</ul>
+				</li>
+				<li>When the game ends:
+					<ul>
+						<li>Ask the player for a nickname</li>
+						<li>Save the nickname inside the localStorage</li>
+					</ul>
+				</li>
+				<li>Implement a high-score list</li>
+				<li><strong>Sheep</strong> means that a digit from xyzw is
+					contained in abcd, but not on the same position
+					<ul>
+						<li>If two such digits exists, the sheep are 2</li>
+					</ul></li>
+				<li>Ram means that a digit from xyzw is contained in abcd and
+					it is on the same position
+					<ul>
+						<li>If two such digits exists, the rams are 2</li>
+					</ul>
+				</li>
+				<li>The game continues until the player guesses the number abcd
+					<ul>
+						<li>i.e. has 4 rams
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<label for="humanNumberId">Enter four digit number: </label>
+        <input id="humanNumberId" type="text"  />
+		<button id="btnId">Suggest</button>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function getRandomFourDigitNumber() {
+       var min = 1000;
+       var max = 9999;
+       var fourDigit = Math.floor(Math.random() * (max - min + 1)) + min;
+       jsConsole.writeLine("computer Number is: " + parseInt(fourDigit));
+       return fourDigit;
+   }
+   var computerNumber = getRandomFourDigitNumber();
+   var hummanNumber,
+           score = 0,
+           COEFFIC = 2.2,
+        btn = document.getElementById("btnId");
+   btn.addEventListener("click",function(){
+       var inp = document.getElementById("humanNumberId");
+       hummanNumber = parseInt(inp.value);
+       if(!isNumber(hummanNumber)){
+           jsConsole.writeLine("You must enter number");
+       }else if(!validLength(hummanNumber)){
+           jsConsole.writeLine("Yu must enter valid length - four digits")
+       }else{
+           score++;
+           var result = calculateBulsAndCows(computerNumber, hummanNumber);
+           jsConsole.writeLine("You enter: " + hummanNumber + ' - ' + result);
+           if(JSON.parse(result).buls == 4){
+               var userName = localStorage.getItem('nickname');
+               var remoteScore = localStorage.getItem('maxScore');
+               if(userName == null){
+                   userName = prompt('Enter your name');
+               }
+               jsConsole.writeLine('You won ' + userName.toUpperCase());
+               var currScore = Math.floor((100 /score) * COEFFIC);
+               jsConsole.writeLine('Your current score are: ' + currScore);
+               localStorage.setItem('nickname', userName);
+               if(remoteScore == null || remoteScore <= currScore){
+                   localStorage.setItem('maxScore', currScore);
+               }else{
+                   jsConsole.writeLine('Your max score are: ' + remoteScore);
+               }
+               computerNumber = getRandomFourDigitNumber();
+           }
+       }
+   });
+
+   function calculateBulsAndCows(computerNumber, humanNumber){
+       var data = {
+           buls: 0,
+           cows: 0
+       };
+       var humanArr = humanNumber.toString().split('');
+       var compArr = computerNumber.toString().split('');
+       var pos = {
+           0: 0,
+           1: 0,
+           2: 0,
+           3: 0
+       };
+       var len = humanArr.length;
+       for(var i = 0; i < len; i++){
+           var humDig = humanArr[i];
+           var comDig = compArr[i];
+           if(humDig == comDig){
+               data.buls++;
+               pos[i] = 2;
+           }
+       }
+       for(var i = 0; i < len ; i++){
+           if(pos[i] != 0){
+               continue;
+           }
+           for(var y = 0; y< len; y++){
+               if(humanArr[i] == compArr[y]){
+                   data.cows++;
+                   pos[i] = 1;
+               }
+           }
+       }
+       return JSON.stringify(data);
+   }
+
+   function isNumber(num){
+       return typeof num === 'number' && isFinite(num);
+   }
+   function validLength(num){
+       num = num+'';
+       return num.length == 4;
+   }
+</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

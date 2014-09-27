@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Conditional-Statements: 7</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			8. Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation. Examples:
+	<pre>
+	0 -> 'Zero'
+	273 -> 'Two hundred seventy three'
+	400 -> 'Four hundred'
+	501 -> 'Five hundred and one'
+	711 -> 'Seven hundred and eleven'</pre>
+			
+		</div>
+<!-- INPUT FIELD		 -->
+		<label for="numberId"> Number 1: </label> 
+		<input id="numberId" type="text" placeholder="value" />
+		
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Check</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var unitsMapEnglish = [ "zero", "one", "two", "three", "four",
+		"five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+		"thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+		"eighteen", "nineteen" ];
+var tensMapEnglsih = [ "zero", "ten", "twenty", "thirty",
+		"forty", "fifty", "sixty", "seventy", "eighty", "ninety" ];		
+function showResult() {
+	var number = jsConsole.readInteger("#numberId");
+	var word = transformToWords(number);
+	jsConsole.writeLine(number +" -> "+word);
+}
+
+var transformToWords = function (number){
+	var wordsResult = "";
+	if (((number/100) | 0) > 0) { //100
+		var ed = ((number/100) | 0);
+		var firstRes = transformToWords(ed);
+		var resFirstLetterCapital = capitaliseFirstLetter(firstRes);
+		wordsResult = wordsResult.concat(resFirstLetterCapital);
+		wordsResult = wordsResult.concat(" hundred ");
+		number = number % 100;
+	}
+	if (number >= 0) {
+		if (strcmp(number, 20) < 0) {
+			wordsResult = wordsResult.concat(unitsMapEnglish[number]);
+		} else {
+			wordsResult = wordsResult.concat(tensMapEnglsih[(number / 10)|0]);
+			if ((number % 10) > 0) {
+				wordsResult = wordsResult.concat("-");
+				wordsResult = wordsResult.concat(unitsMapEnglish[(number % 10)]);
+			}
+		}
+	}
+	return wordsResult;
+
+}
+
+function strcmp(a, b)
+{   
+    return (a<b?-1:(a>b?1:0));  
+}
+
+function capitaliseFirstLetter(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

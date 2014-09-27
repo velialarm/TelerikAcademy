@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Super Mario</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> Create a walking Super Mario
+			<ul>
+				<li>Super Mario must be walking indefinitely from left to right
+					on the screen</li>
+				<li>The background must be created using SVG</li>
+				<li>Additional requirements:
+					<ul>
+						<li>You can use sprites from <a href="https://www.google.com/search?q=super+mario+sprite&newwindow=1&es_sm=122&source=lnms&tbm=isch&sa=X&ei=4haQU4mKJKjB0QXBo4GIBw&ved=0CAgQ_AUoAQ&biw=1618&bih=965">link</a></li>
+						<li>Use Canvas for Super Mario</li>
+						<li>Use SVG for the background</li>
+						<li>You can use Raphael and/or KineticJS, or native
+							Canvas/SVG APIs</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div style="position: relative;">
+			<div id="raphaelContainerId" style="position: absolute;"></div>
+			<div id="canvasMario"></div>
+		</div>
+
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script type="text/javascript" src="../js/kinetic-v5.1.0.js"></script>
+	<script type="text/javascript" src="../js/raphael.js"></script>
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+	var widthGame = 830;
+	var heigthGame = 500;
+	var stage = new Kinetic.Stage({
+		container: 'canvasMario',
+		width: widthGame,
+		height: heigthGame
+	});
+
+	var layer = new Kinetic.Layer();
+	var imageObj = new Image();
+	var spriteMoveX = 80;
+	var spriteMoveY = 145;
+
+	imageObj.onload = function () {
+		
+        var superMario = new Kinetic.Sprite({
+            x: widthGame/2,
+            y: heigthGame-205,
+            image: imageObj,
+            animation: 'idle',
+            animations: {
+                idle: [
+                  0, spriteMoveY*2, 106, spriteMoveY,
+                  0, spriteMoveY*2, 106, spriteMoveY,
+                  0, spriteMoveY*2, 106, spriteMoveY,
+                  106, spriteMoveY*2, 106, spriteMoveY,
+                  106, spriteMoveY*2, 106, spriteMoveY,
+                  106, spriteMoveY*2, 106, spriteMoveY,
+                  106*2, spriteMoveY*2, 106, spriteMoveY,
+                  106*2, spriteMoveY*2, 106, spriteMoveY,
+                  106*2, spriteMoveY*2, 106, spriteMoveY
+                ],
+                left: [
+                   0, 0, spriteMoveX, spriteMoveY,
+                   spriteMoveX, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*2, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*3, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*4, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*5, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*6, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*7, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*8, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*9, spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*10,spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*11,spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*12,spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*13,spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*14,spriteMoveY, spriteMoveX, spriteMoveY,
+                   spriteMoveX*15,spriteMoveY, spriteMoveX, spriteMoveY
+                ],
+                right:[
+                    0, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*2, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*3, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*4, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*5, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*6, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*7, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*8, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*9, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*10, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*11, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*12, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*13, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*14, 0, spriteMoveX, spriteMoveY,
+                    spriteMoveX*15, 0, spriteMoveX, spriteMoveY   
+                ],
+                jump:[
+                      //TODO
+                ],
+            },
+            frameRate: 10,
+            frameIndex: 0
+        });
+	
+	   	layer.add(superMario);
+		stage.add(layer);
+		superMario.start();
+	
+		var frameCount = 0;
+	
+		superMario.on('frameIndexChange', function (eventKey) {
+	        if ((superMario.animation() === 'left' || superMario.animation() === 'right') 
+	    	        && ++frameCount > 3) {
+	            superMario.animation('idle'); 
+	            frameCount = 0;
+	        }
+	    });
+	
+	
+		 function onKeyDown(eventKey) {
+	         switch (eventKey.keyCode) {
+	             case 37:  // left arrow
+	                 superMario.setX(superMario.attrs.x -= 20);
+	                 superMario.attrs.animation = "left";
+	                 break;
+	             case 39:  // right arrow
+	                 superMario.setX(superMario.attrs.x += 20);
+	                 superMario.attrs.animation = "right";
+	                 break;
+	         }
+	     }
+
+		 window.addEventListener('keydown', onKeyDown);
+	};
+
+	 imageObj.src = "../images/super-mario.png";
+		
+	 var paper = Raphael("raphaelContainerId", widthGame, heigthGame);
+	 paper.image("../images/super-mario-backgr.jpg", 0, 0, widthGame, heigthGame);
+
+})();
+</script>
+	<!-- END TASK CODE	 -->
+
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

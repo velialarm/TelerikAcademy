@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Functions: 5</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			5. Write a function that counts how many times given number appears in given array. 
+			<br/><ul><li><i>Write a test function to check if the function is working correctly.
+			</i></li></ul>
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="textId"> Enter array of numbers (separate with comma): </label><br/>
+		<textarea id="textId" rows="3" cols="100"></textarea><br/>
+		<label for="searchNumberId"> Enter search number for test: </label>
+		 <input id="searchNumberId" type="text" placeholder="search number" />
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var array = jsConsole.read("#textId").split(',');
+	var number = jsConsole.read("#searchNumberId");
+	var res = countOccurences(array,number);
+	jsConsole.writeLine("The number "+number+" is apear "+res+ " times");
+}
+
+function countOccurences(array, element) {
+	var countElements = array.filter(function(el) {
+        return el === element
+    });
+    var result = countElements.length;
+    return result;
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

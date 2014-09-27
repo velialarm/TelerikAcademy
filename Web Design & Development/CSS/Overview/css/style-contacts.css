@@ -1,0 +1,41 @@
+#tbl-main {
+	border:#CCC solid 1px;
+	margin:0px;
+}
+td,th{
+	padding:3px;
+}
+#tbl-main td{
+	color: #5C5C5C;
+	font-weight: lighter;
+	line-height: 32px;
+}
+#tbl-main th{
+	color: #FFF;
+	min-width: 100px;
+	font-weight: lighter;
+	background-color: #57B806;
+}
+tr{
+	background-color: #ECECD8;
+}
+tr:nth-child(2n){
+	background-color: #F8F8F8;
+ }
+ .flag{
+width: 32px;
+	height: 32px;
+	display: inline;
+	float: left;
+	margin-right: 8px;
+	background-repeat: no-repeat;
+}
+ .de{
+		background-image: url(../images/Germany-Flag-32.png);
+}
+ .me{
+	background-image: url(../images/Mexico-Flag-32.png);
+}
+ .uk{
+	background-image: url(../images/United-Kingdom-flag-32.png);
+}

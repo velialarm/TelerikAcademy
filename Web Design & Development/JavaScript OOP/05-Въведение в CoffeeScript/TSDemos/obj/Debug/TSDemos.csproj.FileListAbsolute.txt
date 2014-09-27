@@ -1,0 +1,6 @@
+E:\Teleric\JavaScript\TypeScript\solutions\TSDemos\TSDemos\bin\TSDemos.dll.config
+E:\Teleric\JavaScript\TypeScript\solutions\TSDemos\TSDemos\bin\TSDemos.dll
+E:\Teleric\JavaScript\TypeScript\solutions\TSDemos\TSDemos\bin\TSDemos.pdb
+E:\Teleric\JavaScript\TypeScript\solutions\TSDemos\TSDemos\obj\Debug\TSDemos.csprojResolveAssemblyReference.cache
+E:\Teleric\JavaScript\TypeScript\solutions\TSDemos\TSDemos\obj\Debug\TSDemos.dll
+E:\Teleric\JavaScript\TypeScript\solutions\TSDemos\TSDemos\obj\Debug\TSDemos.pdb

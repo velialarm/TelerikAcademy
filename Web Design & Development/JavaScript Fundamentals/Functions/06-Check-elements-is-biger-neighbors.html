@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Functions: 6</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			6. Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="digitsId"> Enter array numbers separate with comma: </label>
+		<input id="digitsId" type="text" placeholder="enter array" /><br/>
+		<label for="elemId"> Enter index of element to check: </label>
+		<input id="elemId" type="text" placeholder="element" />
+		
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var text = jsConsole.read("#digitsId");
+	var position = jsConsole.readInteger("#elemId");
+	var arr = text.split(',');
+	for(var i = 0; i<arr.length; i++){
+		arr[i] = parseInt(arr[i]);
+	}
+	var res = isBigger(arr,position);
+	jsConsole.writeLine(res);
+}	
+function isBigger(mas, pos){
+	var maxEl = mas.length - 1;
+	if(pos < maxEl && pos > 0){
+		return ((mas[pos] > mas[pos+1]) && (mas[pos] > mas[pos-1]));
+	}else if(pos == 0){
+		return mas[pos] > mas[pos+1];
+	}else if(pos == maxEl){
+		return mas[pos] > mas[pos-1];
+	}
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+body {
+    font: 12px arial;
+    color: #222;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+form, p, span {
+    margin: 0;
+    padding: 0;
+}
+input {
+    outline: none;
+}
+a {
+    font: 12px arial;
+}
+
+#wrapper{
+    width: 600px;
+    margin: 0px auto;
+    background-color: #CCC;
+    min-height: 600px;
+}
+#register-content{
+    border-bottom: 2px solid black;
+    padding: 10px 20px;
+}
+.logout-content{
+    text-align: right;
+}
+.register-content, .login-content{
+    width: 200px;
+    float: left;
+    text-align: left;
+}
+
+#post-content{
+    text-align: left;
+    padding-left: 20px;
+}
+#post-content h3{
+    font-size: 16px;
+    padding: 5px 0px;
+    margin: 0px;
+    border-bottom: solid 1px black;
+}
+#post-content p{
+    padding: 7px 0px;
+}
+.footerUserStl{
+    margin-left: 10px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Conditional-Statements: 4</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span>
+6. Write a script that enters the coefficients a, b and c of a quadratic equation
+		<div style="color:red; margin:0px 15px;display:inline-block;">a*x2 + b*x + c = 0</div>
+		and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+
+		</div>
+<!-- INPUT FIELD		 -->
+		<label for="numberOneId"> Coefficients a: </label> 
+		<input id="numberOneId" type="text" placeholder="value" />
+		<label for="numberTwoId"> Coefficients b: </label> 
+		<input id="numberTwoId" type="text" placeholder="value" />
+		<label for="numberThreeId"> Coefficients c: </label> 
+		<input id="numberThreeId" type="text" placeholder="value" />
+		
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Check</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var a = jsConsole.readInteger("#numberOneId");
+	var b = jsConsole.readInteger("#numberTwoId");
+	var c = jsConsole.readInteger("#numberThreeId");
+	var discriminant = b*b-4*a*c;
+	
+	if(discriminant>0){
+		//If the discriminant is positive, then there are two distinct roots
+		var result1 = (-(b)+(Math.sqrt(discriminant))) / (2*a);
+		var result2 = (-(b)-(Math.sqrt(discriminant))) / (2*a);
+		jsConsole.writeLine("There are two distinct roots for quadratic equation "
+				+a+"*x*x + "+b+"x + "+c+" = 0");
+		jsConsole.writeLine("Result one is: "+ result1);
+		jsConsole.writeLine("Result two is: "+ result2);
+	}else if(discriminant<0){
+		//If the discriminant is negative, then there are no real roots
+		jsConsole.writeLine("There are no real roots for quadratic equation "
+				+a+"*x*x + "+b+"x + "+c+" = 0");
+	}else{
+		//If the discriminant is zero, then there is exactly one real root
+		var res = -(b/(2*a));
+		jsConsole.writeLine("There is exactly one real root for quadratic equation "
+				+a+"*x*x + "+b+"x + "+c+" = 0");
+		jsConsole.writeLine("Result is: "+ res);
+	}
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

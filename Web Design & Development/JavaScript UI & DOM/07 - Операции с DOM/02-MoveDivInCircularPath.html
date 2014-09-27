@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Dom Operations: 2</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Write a script that creates 5 div elements and moves them in circular path with interval of 100 milliseconds
+		</div>
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Create 5 div elements</a>
+		</div>
+			<div style="position: absolute;">
+				<div id="divContaner" style="width: 830px;; height: 400px; background-color: #FFF; border: 1px solid black; overflow: hidden;"></div>
+			</div>
+		<div id="highlightCodeID" style="margin-top: 420px;"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var number = 5;
+	var radius = 100;
+	generateDivElements(number);
+
+	var angle = 0;
+	var functionTimer = setInterval(function moveDivs() {
+        angle++;
+        var main = document.getElementById("divContaner");
+    	var widthMain = main.clientWidth;
+    	var heightMain = main.clientHeight;
+    	var movmentNumDev = 360 / 5;
+    	var movmentNum = 0;
+    	for(var i = 0; i < 5; i++){
+    		var el = document.getElementById('divElemNum'+i);
+    		movmentNum += movmentNumDev;
+    		var moveX = Math.sin(toRadians(movmentNum - angle)) * radius;
+    		var moveY = Math.cos(toRadians(movmentNum - angle)) * radius;
+    		el.style.left = (((widthMain/2 - 10) + moveX ) | 0)+'px';
+    		el.style.top = (((heightMain/2 - 10) + moveY) | 0)  +'px';
+    	}
+    }, 100);
+}
+
+function generateDivElements(number, radEl){
+	var docFrag = document.createDocumentFragment();
+	var main = document.getElementById("divContaner");
+	var widthMain = main.clientWidth;
+	var heightMain = main.clientHeight;
+	var radius = radEl;
+	var point = {
+		x: (widthMain/2 - 10),
+		y: (heightMain/2 - 10)
+	};
+	var movmentNumDev = 360 / number;
+	var movmentNum = 0;
+	for(var i = 0; i<number; i++){
+		var elem = document.createElement("div");
+		var elem = document.createElement("div");
+		elem.style.height = '20px';
+		elem.style.width = '20px';
+		elem.style.position = "absolute";
+		elem.style.border = '1px solid black';
+		elem.style.borderRadius = '20px';
+		elem.style.backgroundColor = '#CCC';
+		movmentNum += movmentNumDev;
+		var moveX = Math.sin(toRadians(movmentNum)) * radius;
+		var moveY = Math.cos(toRadians(movmentNum)) * radius;
+		elem.style.left = (point.x + moveX)+'px';
+		elem.style.top = (point.y + moveY) +'px';
+		elem.id = 'divElemNum'+i;
+		docFrag.appendChild(elem);
+	}
+	main.appendChild(docFrag);
+}
+
+function toDegrees (angle) {
+	  return angle * (180 / Math.PI);
+}
+
+function toRadians (angle) {
+	  return angle * (Math.PI / 180);
+}
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>s

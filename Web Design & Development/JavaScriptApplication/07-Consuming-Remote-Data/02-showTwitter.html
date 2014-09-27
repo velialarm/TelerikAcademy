@@ -1,0 +1,58 @@
+<!--
+    Task 2: Read the developer documentation of Twitter
+         Create a simple application that visualizes all
+        public tweets for a given user (maybe from a textbox)
+-->
+<!DOCTYPE html>
+<html>
+<body>
+</body>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="./js/oauth.js"></script>
+</head>
+<div id="wrapper">
+
+</div>
+
+<script type="text/javascript">
+    OAuth.initialize('8SfyU7aaR1QzsKhNyS6piP65rnA');
+    var messageCount = 10;
+    var username = 'yourAccount';
+    var requestUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json?count=' + messageCount + '&screen_name=' + username;
+    var authResponse = OAuth.popup('twitter', {cache : true});
+    if(authResponse != undefined) {
+        authResponse
+                .done(function (result) {
+                    result.get(requestUrl)
+                            .done(function (response) {
+                                console.log('User messages recieved succesfully.');
+                                console.log(response);
+                                renderResponse(response);
+                            })
+                            .fail(function (error) {
+                                console.log(error);
+                            });
+                    console.log('Authenticated succesfully. Your login authorization has been cached.');
+                })
+                .fail(function (err) {
+                    console.log(err);
+                })
+    }else{
+        console.log('Yoyr authenticated is unsuccesfully.');
+    }
+
+    function  renderResponse(response){
+        var len = response.length;
+        if(len != 0){
+            var res = '<ul>';
+            for(var i = 0; i < len; i++){
+                res += response[i].toString();
+            }
+            res+= '</ul>';
+            $("wrapper").html = res;
+        }
+    }
+</script>
+</html>

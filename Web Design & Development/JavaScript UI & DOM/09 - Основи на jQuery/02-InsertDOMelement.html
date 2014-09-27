@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery Overview: 2</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Using jQuery implement functionality to insert a DOM element before or after another element
+		</div>
+		<div id="domElement">
+		Dom Element
+		</div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+$(document).ready(function() {
+	var testEl = $('#domElement');
+	testEl.before('<i>Before</i>');
+	testEl.after('<b>After</b>');
+});
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

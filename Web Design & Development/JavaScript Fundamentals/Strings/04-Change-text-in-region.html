@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Strings: 4</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			4. You are given a text. Write a function that changes the text in all regions:
+			<ul>
+				<li><upcase>text</upcase> to uppercase.</li>
+				<li><lowcase>text</lowcase> to lowercase</li>
+				<li><mixcase>text</mixcase> to mix casing(random)</li>
+			</ul>
+			<pre>
+	We are &lt;mixcase&gt;living&lt;/mixcase&gt; in a &lt;upcase&gt;yellow
+	submarine&lt;/upcase&gt;. We &lt;mixcase&gt;don't&lt;/mixcase&gt; have 
+	&lt;lowcase&gt;anything&lt;/lowcase&gt; else.</pre>
+		<div>The expected result:</div>
+		<pre>
+	We are LiVinG in a YELLOW SUBMARINE. We dOn'T have anything else.</pre>	
+		Regions can be nested
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="digitId"> Enter text: </label> 
+		<textarea id="textId" rows="3" cols="100"></textarea><br/>
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var txt = jsConsole.read("#textId");
+	jsConsole.writeLine(changeText(txt));
+}
+function changeText(text) {
+	text = text.replace(/<upcase>(.*?)<\/upcase>/m, function(match, p1) {
+        return p1.toUpperCase();
+    });
+    text = text.replace(/<lowcase>(.*?)<\/lowcase>/m, function(match, p1) {
+        return p1.toLowerCase()
+    });
+    text = text.replace(/<mixcase>(.*?)<\/mixcase>/g, function(match, p1) {
+		var res="";
+        for(var x = 0; x<p1.length; x++){
+        	res += p1.charAt(x)[Math.round(Math.random()) ? 'toLowerCase' : 'toUpperCase']();
+        }
+        return res;
+    });
+    return text;
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTML5 Canvas: 2</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Draw a circle that flies inside a box
+			<ul>
+				<li>When it reaches an edge, it should bounce that edge</li>
+			</ul>
+		</div>
+		<div class="drawContainer">
+			<div class="drawHeaderStyle">
+				<div class="drawHeaderCol">Screenshot</div>
+				<div class="drawHeaderCol">Live sample</div>
+			</div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/fliengCircleInBox.jpg" alt="Draw the following graphics using canvas"/>
+				</div>
+				<div class="drawContentCol">
+					<canvas id="canvas-content" width="410" height="246">
+						You Browser cannot use canvas!
+					</canvas>
+				</div>
+			</div>
+		</div>
+		
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+	var canvas = document.getElementById("canvas-content");
+	if (canvas.getContext) {
+		var widthCanvas = canvas.getAttribute("width"),
+		heigthCanvas = canvas.getAttribute("height"),
+		fillColor = "#FF0000",
+		strokeColor = "#003300",
+		ball = {
+				radius: 5,
+				xPosition: 1,
+				yPosition: 100,
+				xDirection: -1,
+				yDirection: 1,
+				move: function(){
+					if (this.xPosition === 0) {
+	                    this.xDirection *= -1;
+	                }
+	                if (this.yPosition === 0) {
+	                    this.yDirection *= -1;
+	                }
+	                if (this.xPosition >= widthCanvas) {
+	                    this.xDirection *= -1;
+	                }
+	                if (this.yPosition >= heigthCanvas) {
+	                    this.yDirection *= -1;
+	                }
+	                this.xPosition += this.xDirection;
+	                this.yPosition += this.yDirection;
+				}
+		}, 
+		setBackground = function (color){
+			ctx.beginPath();
+			ctx.fillStyle = color;
+			ctx.fillRect(0, 0, widthCanvas, heigthCanvas);
+			ctx.closePath();
+		},
+		drawBall = function (context, ball) {
+	        ball.move();
+	        context.clearRect(0, 0, widthCanvas, heigthCanvas);
+	        setBackground("#FFF");
+	        context.beginPath();
+	        context.arc(ball.xPosition, ball.yPosition, ball.radius, 0, 2 * Math.PI, false);
+	        context.fillStyle = fillColor;
+	        context.fill();
+	    },
+	    ctx = canvas.getContext('2d');
+	   
+        window.setInterval(function () {
+            	drawBall(ctx, ball);
+       		 }, 2);
+		}
+})();
+
+	</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

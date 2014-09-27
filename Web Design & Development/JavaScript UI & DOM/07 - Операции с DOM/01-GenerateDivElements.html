@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Dom Operations: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Write a script that creates a number of div elements. Each div element must have the following
+			<ul>
+				<li>Random width and height between 20px and 100px</li>
+				<li>Random background color</li>
+				<li>Random font color</li>
+				<li>Random position on the screen (position:absolute)</li>
+				<li>A strong element with text "div" inside the div</li>
+				<li>Random border radius</li>
+				<li>Random border color</li>
+				<li>Random border width between 1px and 20px</li>
+			</ul>
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="numberId"> Enter number of div elements: </label> <input id="numberId"
+			type="text" placeholder="value" />
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+			<div style="position: absolute;">
+				<div id="divContaner" style="width: 830px;; height: 400px; background-color: #FFF; border: 1px solid black; overflow: hidden;"></div>
+			</div>
+		<div id="highlightCodeID" style="margin-top: 420px;"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var number = parseInt(document.getElementById("numberId").value);
+	generateDivElements(number);
+}
+
+function generateDivElements(number){
+	var docFrag = document.createDocumentFragment();
+	var main = document.getElementById("divContaner");
+	var widthMain = main.clientWidth;
+	var heightMain = main.clientHeight;
+	for(var i = 0; i<number; i++){
+		var elem = document.createElement("div"),
+		stronche = document.createElement('strong'),
+		randRadius = randomValue(1,20),
+		height = randomValue(20,100),
+		width = randomValue(20,100);
+		stronche.appendChild(document.createTextNode("div"));
+		elem.appendChild(stronche);
+		elem.style.color = randomColor();
+		elem.style.position = "absolute";
+		elem.style.height = height +'px';
+		elem.style.width = width+'px';
+		elem.style.border = randRadius +'px solid '+ randomColor();
+		elem.style.borderRadius = randomValue(0, 20)+'px';
+		elem.style.backgroundColor = randomColor();
+		elem.style.left = randomValue(1,85)+ '%';
+		elem.style.top = randomValue(1,heightMain-height-(randRadius*2))+ 'px';
+		docFrag.appendChild(elem);
+	}
+	main.appendChild(docFrag);
+}
+
+function randomValue(min, max){
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomColor() {
+	return 'rgb(' + [
+	    randomValue(0, 255),
+	    randomValue(0, 255),
+	    randomValue(0, 255)
+	  ].join(', ') + ')';
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

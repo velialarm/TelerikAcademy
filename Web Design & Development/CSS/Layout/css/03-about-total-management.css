@@ -1,0 +1,113 @@
+﻿@charset "UTF-8";
+
+body {
+    background-color: #000000;
+    margin: 0px;
+    padding: 0px;
+    color: #CCC;
+}
+
+#header_nav {
+    width: 778px;
+    height: 77px;
+    position: relative;
+    margin: 0 auto;
+    color: #3B3B3B;
+    background-color: #3B3B3B;
+    background-image: url(../img/shadow.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+#main_text {
+    width: 602px;
+    clear: both;
+    background-color: #3B3B3B;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    padding-right: 88px;
+    padding-left: 88px;
+}
+
+h1 {
+    width: 400px;
+    height: 68px;
+    display: block;
+    color: #FBD61A;
+    font: 28px/68px Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#header_nav form {
+    width: 690px;
+    height: 77px;
+    margin: 0px;
+    padding: 0 0 0 88px;
+}
+
+form label {
+    width: 177px;
+    height: 50px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    float: left;
+    background-image: url(../img/pics.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-left: 60px;
+    line-height: 46px;
+    margin-top: 17px;
+}
+
+form input {
+    float: left;
+    display: block;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-left: 5px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    background-color: #FFF;
+}
+
+input {
+    padding: 1px;
+    background-color: white;
+    border: 2px inset;
+    margin: 0em;
+    color: initial;
+    letter-spacing: normal;
+    text-indent: 0px;
+    display: inline-block;
+}
+
+.butt_f {
+    width: 56px;
+    height: 28px;
+    float: left;
+    border: none;
+    color: #fff;
+    font: 14px/28px Verdana, Arial, Helvetica, sans-serif;
+    margin: 26px 0 0;
+    padding: 0px;
+    background-color: #3A3A3A;
+    background-image: url(../img/butt.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+span {
+    color: #fff;
+}

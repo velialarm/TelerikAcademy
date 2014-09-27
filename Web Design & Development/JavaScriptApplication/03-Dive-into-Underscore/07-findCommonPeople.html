@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Document Object Model: 7</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../js/underscore.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 7. By an array of people find the most
+			common first and last name. Use underscore.
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var peoples = [
+                {firstName : "Ivan", lastName: "Ivanov"},
+                {firstName : "Pesho", lastName: "Stoqnov"},
+                {firstName : "Kifla", lastName: "Zurlova"},
+                {firstName : "Ivan", lastName: "Draganov"},
+                {firstName : "Mishka", lastName: "Ivanov"},
+                {firstName : "Zaek", lastName: "Blokov"},
+                {firstName : "Ivan", lastName: "Ivanov"},
+                {firstName : "Ivan", lastName: "Siqnov"}
+ ];
+var groupByFirstName = _.groupBy(peoples, "firstName");
+var maxLen = 0, firstName, lastName;
+_.each(groupByFirstName, function(item){
+	if(maxLen < item.length){
+		maxLen = item.length;
+		firstName = item[0].firstName;
+	}
+});
+maxLen = 0;
+var groupByLastName = _.groupBy(peoples, "lastName");
+_.each(groupByLastName, function(item){
+	if(maxLen < item.length){
+		maxLen = item.length;
+		lastName = item[0].lastName;
+	}
+});
+var msgFirstName = 'The most common firstName is: ' + firstName; 
+var msgLastName = 'The most common lastName is: ' + lastName
+
+console.log(msgFirstName);
+jsConsole.writeLine(msgFirstName);
+console.log(msgLastName);
+jsConsole.writeLine(msgLastName);
+	</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

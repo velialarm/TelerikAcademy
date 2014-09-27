@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Functions and Function Expressions: 3</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../highlight/styles/default.css" rel="stylesheet"
+          type="text/css" />
+    <script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="content">
+    <div class="description">
+        <span>Description:</span> 3. Create a module to work with the console object. Implement functionality for
+        <ul>
+            <li>Writing a line to the console</li>
+            <li>Writing a line to the console using a format</li>
+            <li>Writing to the console should call toString() to each element</li>
+            <li>Writing errors and warnings to the console with and without format</li>
+        </ul>
+<div>
+    <h3>Example Code to run module.</h3>
+<pre>var specialConsole = …
+specialConsole.writeLine("Message: hello");
+//logs to the console "Message: hello"
+specialConsole.writeLine("Message: {0}", "hello");
+//logs to the console "Message: hello"
+specialConsole.writeError("Error: {0}", "Something happened");
+specialConsole.writeWarning("Warning: {0}", "A warning");</pre>
+</div>
+
+    </div>
+    <label for="inputTxtId1">Enter line code: </label>
+	<input id="inputTxtId1" type="text" placeholder="text"> 
+    <div class="btnSend" style="display: inline-block;">
+        <a href="#" onclick="addLineCode()">Run</a>
+    </div>
+    <div>
+    	<label for="inputTxtId2">Enter formated line code: </label>
+		<input id="inputTxtId2" type="text" placeholder="Formated"> 
+		<input id="inputTxtId3" type="text" placeholder="text"> 
+	    <div class="btnSend" style="display: inline-block;">
+	        <a href="#" onclick="addFormatLineCode()">Run</a>
+	    </div>
+    </div>
+    <div class="btnSend" style="display: inline-block;">
+        <a href="#" onclick="addErrorLineCode()">Run Error Formated Code</a>
+    </div>
+     <div class="btnSend" style="display: inline-block;">
+        <a href="#" onclick="addWarningLineCode()">Run Warning code</a>
+    </div>
+
+    <div class="consoleTitle">Console: </div>
+    <div id="console"></div>
+    <div id="highlightCodeID"></div>
+</div>
+<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+<script id="taskJavaScriptCode" type="text/javascript">
+var specialConsole = (function (){
+	var parrentElement = document.querySelector('#console');
+    function writeLine(textFormat, text){
+        if(text == undefined){
+            text = textFormat;
+        }else{
+        	 text = textFormat.substring(0,textFormat.indexOf('{')) + text;
+        }
+    	var textLine = document.createElement("span");
+		textLine.innerHTML = text;
+		parrentElement.appendChild(textLine);
+		parrentElement.appendChild(document.createElement("br"));
+    }
+    function writeError(textFormat, text){
+    	writeLine.call(this, textFormat, text);
+    }
+    function writeWarning(textFormat, text){
+    	writeLine.call(this, textFormat, text);
+    }
+    return {
+		writeLine: writeLine,
+		writeError: writeError,
+		writeWarning: writeWarning
+    };
+})();
+
+function addLineCode() {
+	var inputValue = getInputValue('#inputTxtId1');
+	specialConsole.writeLine(inputValue);
+}
+
+function addFormatLineCode(){
+	var formatVal = getInputValue('#inputTxtId2');
+	var text = getInputValue('#inputTxtId3');
+	specialConsole.writeLine(formatVal, text);
+}
+
+function addErrorLineCode(){
+	specialConsole.writeError("Error: {0}", "Something happened");
+}
+
+function addWarningLineCode(){
+	specialConsole.writeWarning("Warning: {0}", "A warning");
+}
+
+function getInputValue(selector){
+	var element = document.querySelector(selector);
+	if (element.innerHTML) {
+		return element.innerHTML;
+	}else {
+		return element.value;
+	}
+}
+</script>
+<!-- END TASK CODE	 -->
+
+<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

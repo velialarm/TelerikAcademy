@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery Plygins: 2</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Create a jQuery plugin for fading in/fading out message box
+			<ul>
+				<li>Creates a message box</li>
+				<li>Show a success/error message in the box
+					<ul>
+						<li>Showing is done by setting the opacity of the message from 0to 1in an interval of 1 second</li>
+						<li>The message disappears after 3 secondsvarmsgBox</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="highlightCodeID"></div>
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+$(document).ready(function() {
+	$.fn.messageBox = function () {
+	   //TODO
+	}
+	secondsvarmsgBox= $('#message-box').messageBox();
+});
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Classical OOP: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Create a module for drawing shapes using Canvas. Implement the following shapes:
+			<ul>
+				<li>Rect, by given position (X, Y) and size (Width, Height)</li>
+				<li>Circle, by given center position (X, Y) and radius (R)</li>
+				<li>Line, by given from (X1, Y1) and to (X2, Y2) positions</li>
+			</ul>
+		</div>
+		
+		<div class="btnSend" style="display: inline-block;">
+			<a href="#" onclick="drawRect()">Draw Rectangle</a>
+		</div>
+		<div class="btnSend" style="display: inline-block;">
+			<a href="#" onclick="drawCircle()">Draw Circle</a>
+		</div>
+		<div class="btnSend" style="display: inline-block;">
+			<a href="#" onclick="drawLine()">Draw Line</a>
+		</div>
+        
+		<h3>Canvas Place... </h3>
+		<canvas id="canvasId" class="canvasStyle">
+			Your browser cannot run canvas
+		</canvas>
+		<div id="wrapper"></div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var shapeModule = (function (){
+	var canvas = document.getElementById("canvasId");
+	var ctx = canvas.getContext("2d");
+  	
+	ctx.lineWidth = 2;
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = 'red';
+
+    var Shape = (function () {
+		function Shape(x, y) {
+			this._x = x;
+			this._y = y;
+		}
+		return Shape;
+	}());
+    var Rect = (function(){
+    	function Rect(x, y, width, height) {
+			Shape.call(this, x, y);
+			this._width = width;
+			this._height = height;
+		}
+    	Rect.prototype = new Shape();
+    	Rect.prototype.draw = function(){
+    		ctx.beginPath();
+            ctx.fillStyle = 'red';
+            ctx.fillRect(this._x, this._y, this._width, this._height);
+            ctx.stroke();
+            ctx.closePath();
+            jsConsole.writeLine("Rectangle was draw.");
+        };
+    	return Rect;
+    }());
+	var Circle = (function(){
+		function Circle(x,y, radius){
+			Shape.call(this, x, y);
+			this._radius = radius;
+		}
+		Circle.prototype = new Shape();
+        Circle.prototype.draw = function(){
+            ctx.beginPath();
+            ctx.fillStyle = 'yellow';
+            ctx.arc(this._x, this._y, this._radius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+            jsConsole.writeLine("Circle was draw.");
+        };
+		return Circle;
+	}());
+    var drawLine = (function(){
+        function drawLine(Pos_x, Pos_y, Next_x, Next_y) {
+            ctx.beginPath();
+            ctx.fillStyle = 'green';
+            ctx.moveTo(Pos_x, Pos_y);
+            ctx.lineTo(Next_x, Next_y);
+            ctx.stroke();
+            ctx.closePath();
+            jsConsole.writeLine("Line was draw.");
+        }
+        return drawLine;
+    }());
+
+	return {
+		Rect: Rect,
+		Circle: Circle,
+        drawLine: drawLine
+	};
+	
+})();
+
+function drawRect(){
+	var rect = new shapeModule.Rect(110,50,50,50).draw();
+}
+
+function drawCircle(){
+    var circle = new shapeModule.Circle(120,50,25).draw();
+}
+
+function attachEventche(){
+	
+}
+
+function drawLine(){
+	var line = new shapeModule.drawLine(10,20, 600, 200);
+}
+</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Raphael JS for SVG: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Create the following images using Raphael:
+		</div>
+		
+		<div class="drawContainer">
+			<div class="drawHeaderStyle">
+				<div class="drawHeaderCol">Screenshot</div>
+				<div class="drawHeaderCol">Raphael JS Live sample</div>
+			</div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/raphael-teleric-sample.jpg"/>
+				</div>
+				<div class="drawContentCol">
+					<div id="containerTelerikLogoId" style="background-color: #FFF;"></div>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/raphael-youtube-sample.jpg" />
+				</div>
+				<div  class="drawContentCol">
+						<div id="containerYoutubeLogoId" style="background-color: #FFF;"></div>
+				</div>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/raphael.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+	 var paper = Raphael("containerTelerikLogoId", 410, 151);
+	 var logoText = "Telerik";
+	 var slogan = "Develop experiances";
+	 paper.text(200, 70, logoText).attr({
+			"font-size": 72,
+			"font-family": "Arial Bold",
+			fill: 'black',
+	});
+	 paper.text(230, 115, slogan).attr({
+			"font-size": 32,
+			"font-family": "Times New Roman",
+			fill: 'black',
+	});
+	var logoImage = paper.image("../images/logo-telerik.png", 5, 23, 79, 74); 
+	paper.text(330,60, "R").attr({
+			"font-size": 12,
+			"font-family": "Arial Bold"
+	});
+	paper.circle(330, 60, 10);
+})();
+
+(function() {
+	'use strict';
+	 var paper = Raphael("containerYoutubeLogoId", 410, 151);
+	 var youText = "You";
+	 var tubeText = "Tube";
+	 paper.text(90, 70, youText).attr({
+			"font-size": 100,
+			"font-family": "Arial Narrow Bold",
+			fill: 'black',
+	});
+	
+	paper.rect(175, 12, 210, 125, 30).attr({ 
+		'stroke-width': 0, 
+		fill: 'red' 
+	});
+
+	 paper.text(280, 70, tubeText).attr({
+			"font-size": 100,
+			"font-family": "Arial Narrow Bold",
+			fill: 'white',
+	});
+})();
+</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

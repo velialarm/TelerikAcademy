@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTML5 Canvas: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/kinetic-v5.1.0.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Using Kinetic create a family tree
+		</div>
+
+		<div class="drawContainer">
+			<div class="drawHeaderStyle">
+				<div class="drawHeaderCol">Screenshot</div>
+				<div class="drawHeaderCol">Live sample</div>
+			</div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/family-tree.jpg" alt="Family Tree example" />
+				</div>
+				<div class="drawContentCol">
+					<div id="canvas-content" style="background-color: #000"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+
+	var stage = new Kinetic.Stage({
+		container: 'canvas-content',
+		width: 410,
+		height: 300
+	});
+
+	var pesho = createNode(130, 20, "Todor Stamatov", true);
+	stage.add(pesho);
+	var petra = createNode(280, 20, "Petra Stamatova", false);
+	stage.add(petra);
+	
+	var georgi = createNode(10, 100, "Georgi Petrov", true);
+	stage.add(georgi);
+	var maria = createNode(200, 100, "Maria Petrova", false);
+	stage.add(maria);
+
+
+	var peter = createNode(100, 200, "Peter Petrov", true);
+	stage.add(peter);
+	var teodora = createNode(260, 200, "Teodora Petrova", false);
+	stage.add(teodora);
+
+	function createNode(xPos, yPos, name, sex){
+		var layer = new Kinetic.Layer({
+				x: xPos,
+				y: yPos
+			});
+		var rect = new Kinetic.Rect({
+			cornerRadius: (sex == true) ? 7 : 18,
+			fill: "#ffffff",
+			stroke: 'green',
+			width: 120,
+			height: 35
+		});
+		var text = new Kinetic.Text({
+			text: name,
+			fontSize: 12,
+	        fontFamily: 'Calibri',
+	        fontStyle: 'bold',
+	        fill: 'black',
+        	width: 120,
+			height: 35,
+			align: 'center',
+			padding: 11
+		});
+		layer.add(rect);
+		layer.add(text);
+		return layer;
+	}
+
+	//TODO Create link function between nodes
+	
+})();
+</script>
+	<!-- END TASK CODE	 -->
+
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

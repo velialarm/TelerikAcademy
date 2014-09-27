@@ -1,0 +1,58 @@
+@charset "UTF-8";
+#row {
+	clear: both;
+}
+.title {
+	color: #FFFFFF;
+	font-style: italic;
+	text-align: left;
+	width:200px;
+	float:left
+}
+body {
+	background-color: #595959;
+}
+.name-ticket {
+	font-size: 1.5em;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#row {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.part {
+	float: left;
+}
+.content {
+	color: #EDD592;
+}
+p {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-bottom: 8px;
+}
+.red {
+	color: #FF0000;
+}
+.bu {
+	color: #A0B6B1;
+}
+.gugu {
+	color: #D16835;
+	font-weight: bolder;
+}
+.prep {
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background-color: #71B47A;
+	display: inline;
+	float: left;
+	margin-right: 8px;
+	margin-top: 3px;
+}

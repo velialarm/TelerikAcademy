@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Strings: 9</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/googlecode.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			9. Write a function for extracting all email addresses from given text. All substrings that match the format <identifier>@<host>…<domain> should be recognized as emails. Return the emails as array of strings.
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="textId"> Enter text: </label> 
+		<textarea id="textId" rows="3" cols="100"></textarea><br/>
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var txt = jsConsole.read("#textId");
+	var arrEmails = extractEmails(txt);
+	for(var i=0;i<arrEmails.length; i++){
+		jsConsole.writeLine(i+1+" - "+arrEmails[i]);
+	}
+}
+
+function extractEmails(text){
+	return text.match(/\w+@\w+\.\w+/g);
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTML Template - HandleBarsJS: 2</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="../js/handlebars-v1.3.0.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Create a dynamic select using Handlebars.js
+			<ul>
+				<li>The options in the select should be generated based on a collection of JavaScript objects</li>
+			</ul>
+		</div>
+		
+		<h2>Template Result: </h2>
+		<div id="containerHTML"></div>
+        <script id="table-demo" type='text/x-handlebars-template'>
+		<select>
+			{{#items}}
+				<option value="{{value}}">{{text}}</option>
+			{{/items}}
+		</select>
+        </script>
+		
+		<div id="highlightCodeID"></div>
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+$(document).ready(function() {
+	var templateNode = $('#table-demo');
+	var templateString = templateNode.text();
+
+	var template = Handlebars.compile(templateString);
+	var items = [{
+            value: 1,
+            text: 'One'
+        },
+        {
+       	 value: 2,
+         text: 'Two'
+        },
+        {
+       	 value: 3,
+         text: 'three'
+       },
+       {
+      	 value: 4,
+         text: 'Four'
+      },
+      {
+     	 value: 5,
+          text: 'Five'
+     }
+            ];
+	var start = template({
+		items:items
+    });
+	$('#containerHTML').html(start);
+});
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

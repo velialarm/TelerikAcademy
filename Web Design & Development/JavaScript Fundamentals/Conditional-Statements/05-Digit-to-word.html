@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Conditional-Statements: 5</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			5.Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
+		</div>
+<!-- INPUT FIELD		 -->
+		<label for="digitId"> Enter digit: </label> 
+		<input id="digitId" type="text" placeholder="value" />
+		
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Check</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var digit = jsConsole.readInteger("#digitId");
+	var word = "";
+	switch(digit){
+	case 1:
+		word = "one";
+		break;
+	case 2:
+		word = "two";
+		break;
+	case 3:
+		word = "three";
+		break;
+	case 4:
+		word = "four";
+		break;
+	case 5:
+		word = "five";
+		break;
+	case 6:
+		word = "six";
+		break;
+	case 7:
+		word = "seven";
+		break;
+	case 8:
+		word = "eight";
+		break;
+	case 9:
+		word = "nine";
+		break;
+	case 0:
+		word = "zero";
+		break;
+	default:
+		word = "undefined yet... :)";
+		break;	
+	}
+	jsConsole.writeLine("Name of digit ("+digit+") is: " + word);
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

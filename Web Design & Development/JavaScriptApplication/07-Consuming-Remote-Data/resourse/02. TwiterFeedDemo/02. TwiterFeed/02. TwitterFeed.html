@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Twitter Feed</title>
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/toastr.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-heading text-center">
+            <h2>Welcome to my Twitter app</h2>
+            <p class="lead">Please enter the name of the Twitter user whose timeline you wish to view.</p>
+            <p>However, you must first <a href="#" id="authorize">Authorize with Twitter</a> before using this app.</p>
+        </div>
+        <div class="panel-body">
+            <div class="form">
+                <div class="form-group text-center">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control" id="username" />
+                </div>
+                <div class="form-group text-center">
+                    <label for="count">Number of messages: </label>
+                    <input type="text" class="form-control" id="count" />
+                </div>
+                <div class="text-center btn-toolbar">
+                    <button class="btn btn-primary" id="get-user">Get user</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/libs/require.js" data-main="scripts/app"></script>
+</body>
+</html>

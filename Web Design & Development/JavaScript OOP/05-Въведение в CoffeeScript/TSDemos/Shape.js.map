@@ -1,0 +1,1 @@
+{"version":3,"file":"Shape.js","sourceRoot":"","sources":["Shape.ts"],"names":["Shape","Shape.constructor","Shape.getArea"],"mappings":"AAAA;IAIIA,eAAYA,EAAUA,EAAEA,EAAUA;QAC9BC,IAAIA,CAACA,MAAMA,GAAGA,EAAEA;QAChBA,IAAIA,CAACA,MAAMA,GAAGA,EAAEA;IACpBA,CAACA;IAEDD,0BAAAA;QACIE,OAAOA,CAACA;IACZA,CAACA;IACLF,aAACA;AAADA,CAACA,IAAA"}

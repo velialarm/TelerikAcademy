@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Event model: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Create a TODO list with the following UI
+			controls
+			<ul>
+				<li>Form input for new Item</li>
+				<li>Button for adding the new Item</li>
+				<li>Button for deleting some item</li>
+				<li>Show and Hide Button</li>
+			</ul>
+		</div>
+
+		<div id="todoListContainer">
+			<label for="todoDate">Enter date: </label> 
+			<input id="todoDate" type="date"> 
+			<label for="todoContent">TODO:</label> 
+			<input id="todoContent" type="text">
+			<button id="addListItem">Add new TODO item</button>
+			<br>
+			<radiogroup id="todo-list"> </radiogroup>
+			<br>
+			<button id="removeItem">Remove item</button>
+			<button id="hideItem">Hide item</button>
+			<button id="showItems">Show items</button>
+		</div>
+		<div style="position: absolute;">
+			<div id="divContaner"
+				style="width: 820px;; height: 400px; background-color: #FFF; padding: 5px; border: 1px solid black; overflow: hidden;"></div>
+		</div>
+		<div id="highlightCodeID" style="margin-top: 420px;"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+	var addItemButton = document.getElementById('addListItem');
+	var selectedEl;
+	addItemButton.addEventListener('click', function() {
+		var dateSelected = document.getElementById('todoDate');
+		var todoContent = document.getElementById('todoContent');
+		addItem(dateSelected.value, todoContent.value);
+	});
+
+	var removeItemButton = document.getElementById('removeItem');
+	removeItemButton.addEventListener('click', function() {
+		removeItem(selectedEl);
+	});
+
+	var hideItemButton = document.getElementById('hideItem');
+	hideItem.addEventListener('click', function () {
+		hideItemEl(selectedEl);
+	});
+
+	var showItemsButton = document.getElementById('showItems');
+	showItemsButton.addEventListener('click', function () {
+		showItems(selectedEl);
+	});
+
+	
+	function addItem(date, valueEl){
+
+        if (!valueEl) {
+           return;
+        }
+		var main = document.getElementById('divContaner');
+		var widthMain = document.getElementById('divContaner').clientWidth;
+		var newItem = document.createElement('div');
+		newItem.style.border = '1px solid black';
+		newItem.style.marginBottom = '2px';
+		newItem.style.padding = '0px 15px ';
+		newItem.style.width = widthMain-10 +'px';
+		newItem.innerHTML  = date ? (date + " : "+ valueEl) : '' + valueEl;
+		main.appendChild(newItem);
+		selectedEl = newItem;
+	}
+		
+	function removeItem(el){
+		el.remove();
+	}
+	function showItems(el){
+		if(el.hidden){
+			el.hidden = false;
+		}
+	}
+	function hideItemEl(el){
+		if(!el.hidden){
+			el.hidden = true;
+		}
+	}
+	function createActiveElement(){
+		//TODO		
+	}
+})();
+</script>
+	<!-- END TASK CODE	 -->
+
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

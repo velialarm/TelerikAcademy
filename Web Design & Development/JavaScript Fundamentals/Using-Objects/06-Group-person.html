@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Using-Objects: 6</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			6. Write a function that groups an array of persons by age, first or last name. The function must return an associative array, with keys - the groups, and values -arrays with persons in this groups
+			<ul>
+				<li>Use function overloading (i.e. just one function)
+			<pre>
+	var persons = {…};
+	var groupedByFname = group(persons,"firstname");
+	var groupedByAge= group(persons,"age");
+			</pre>
+				</li>
+			</ul>
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="firstNameId"> Enter Firs tName: </label> 
+		<input id="firstNameId" type="text" placeholder="First Name" />
+		<label for="lastNameId"> Enter Family Name: </label> 
+		<input id="lastNameId" type="text" placeholder="Family Name" />
+		<label for="ageId"> Enter Age: </label> 
+		<input id="ageId" type="text" placeholder="Age" />
+		<br/>
+
+		<div class="btnSend" style="display:inline-block;">
+			<a href="#" onclick="addPerson()">Add Person</a>
+		</div>
+		<div class="btnSend"  style="display:inline-block;">
+			<a href="#" onclick="showResult()">Group By</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var persons = [];	
+
+function addPerson() {
+	var firstName = jsConsole.read("#firstNameId");
+	var lastName = jsConsole.read("#lastNameId");
+	var agePerson = jsConsole.readInteger("#ageId");
+	var person = {};
+	person.firstname = firstName;
+	person.lastname = lastName;
+	person.age = agePerson;
+	persons.push(person);
+	jsConsole.writeLine(firstName+" "+lastName+" was added. ");
+}	
+
+function showResult() {
+	var res = group(persons,"age");
+	for(var item in res){
+		jsConsole.writeLine("Object group by: "+ item + ".");
+		for(var ob in res[item]){
+			jsConsole.writeLine(res[item][ob].firstname + " " + res[item][ob].lastname);
+		}
+	}
+}
+
+function group(arr, byType){
+	var result = {};
+    var key;
+    for (var i = 0; i < arr.length; i++) {
+        for (var prop in arr[i]) {
+            if (prop == byType) {
+            	key = arr[i][prop];
+            	result[key] = result[key] || [];
+            	result[key].push(arr[i]);
+            }
+        }
+    }  
+    return result;
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

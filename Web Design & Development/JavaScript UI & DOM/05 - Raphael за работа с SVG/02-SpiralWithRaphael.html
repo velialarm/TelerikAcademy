@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Raphael JS for SVG: 2</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 2. Create a spiral with Raphael
+		</div>
+		
+		<div class="drawContainer">
+			<div class="drawHeaderStyle">
+				<div class="drawHeaderCol">Screenshot</div>
+				<div class="drawHeaderCol">Raphael JS Live sample</div>
+			</div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/graphicCanvasDraw.png" alt="Draw the following graphics using canvas"/>
+				</div>
+				<div class="drawContentCol">
+					<canvas id="canvas-content" width="410" height="300">
+						You Browser cannot use canvas!
+					</canvas>
+				</div>
+			</div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/graphicCanvasDraw.png" alt="Draw the following graphics using canvas"/>
+				</div>
+				<div class="drawContentCol">
+					<canvas id="canvas-content" width="410" height="300">
+						You Browser cannot use canvas!
+					</canvas>
+				</div>
+			</div>
+		</div>
+		
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+	var canvas = document.getElementById("canvas-content");
+	if (canvas.getContext) {
+	    var ctx = canvas.getContext('2d');
+	    setBackground("#FFF");
+
+	
+	function setBackground(color){
+		var widthCanvas = canvas.getAttribute("width");
+		var heigthCanvas = canvas.getAttribute("height");
+		ctx.beginPath();
+		ctx.fillStyle = color;
+		ctx.fillRect(0, 0, widthCanvas, heigthCanvas);
+		ctx.closePath();
+	}
+
+	
+})();
+</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

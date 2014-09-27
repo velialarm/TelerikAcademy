@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Operators-Expressions: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			1. Write an expression that checks if given integer is odd or even.
+		</div>
+		
+		<label for="numberForCheck"> Enter integer: </label> 
+		<input type="text" placeholder="value" id="numberForCheck" />
+		<div class="btnSend">
+			<a href="#" onclick="devideBy5or7()">Check</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function devideBy5or7() {
+	var number = jsConsole.readInteger("#numberForCheck");
+	if(number % 2 == 0){
+		jsConsole.writeLine("Number " + number + " is: even");		
+	}else{
+		jsConsole.writeLine("Number " + number + " is: odd");
+	}
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

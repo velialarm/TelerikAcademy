@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style type="text/css">
+#labV{
+	float:left;
+	width:150px;
+	text-align:right;
+	padding-right:15px;
+}
+#grView{
+	clear:both;
+}
+#state{
+	width: 58px;
+}
+#phone, #phone1, #birtdate{
+		width:30px;
+}
+textarea,#fn,#ln,#email{
+	width: 259px;
+}
+#phone2{
+	width: 156px;
+}
+#contentF{
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border: thin solid #000000;
+	border-radius: 7px;
+	background-color: #F9F9F9;
+}
+.cenBtn{
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="contentF">
+<form id="form1" name="form1" method="post">
+
+<div id="grView">
+<div id="labV"><label for="fn">First Name</label></div>
+<div id="formView">
+<input id="fn" type="text" value="Nakov"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="ln">Last Name</label></div>
+<div id="formView">
+<input id="ln" type="text" value="Svetlin"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="address">Address</label></div>
+<div id="formView">
+<textarea id="address"></textarea></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="city">City</label></div>
+<div id="formView">
+<input id="city" type="text" value="Kaspichan">
+<label for="state">State</label>
+<input id="state" type="text" id="state"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="zip">ZipPostal Code</label></div>
+<div id="formView">
+<input id="zip" type="text" value="9325"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="country">Country</label></div>
+<div id="formView">
+<select id="country" name="co">
+	<option value="1" selected="selected">Bulgaria</option>
+    <option value="2">German</option>
+    <option value="3" >Italian</option>
+</select></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="phone">Phone(country code, area code, number)</label></div>
+<div id="formView">(+
+<input id="phone" type="text" value="359">)
+<input id="phone1" type="text" value="88">
+<input id="phone2" type="text" value="888777"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="email">E-mail</label></div>
+<div id="formView">
+<input id="email" type="email" value="Nakov@kaspicha.org"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="birtdate">Birth date</label></div>
+<div id="formView">
+Month<input id="birtdate" type="text" value="06">
+Day<input id="birtdate" type="text" value="14">
+Year(4 digit)<input id="birtdate" type="text" value="1980"></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="gender">Gender</label></div>
+<div id="formView">
+<select id="gender" name="gender">
+	<option value="1" selected="selected">Male</option>
+    <option value="2">Female</option>
+</select></div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="start">Starting date</label></div>
+<div id="formView">
+<label>
+<input type="radio" name="RadioGroup1" value="radio" checked="true" id="RadioGroup1_0">Spring 2006</label>
+<label>
+<input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_1">
+Summer 2006</label>
+</div>
+</div>
+
+<div id="grView">
+<div id="labV"><label for="comments">Comments/Questions</label></div>
+<div id="formView">
+<textarea id="address">
+Please send me more information about the loading...
+</textarea></div>
+</div>
+<div id="grView" class="cenBtn">
+<input type="submit"><input type="reset" value="Clear This Form">
+</div>
+
+</form>
+</div>
+</body>
+</html>

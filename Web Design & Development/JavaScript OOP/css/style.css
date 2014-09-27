@@ -1,0 +1,210 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.js-console {
+	margin: 0;
+	padding: 5px 10px;
+	background-color: white;
+	width: 800px;
+	height: 200px;
+	font-family: Consolas;
+	font-size: 16px;
+	color: black;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	word-break: break-all;
+	border: 1px solid black;
+}
+
+.js-console>p {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: block;
+}
+
+.js-console>p>span {
+	margin: 0;
+	padding: 0;
+}
+
+.js-console>p>br {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.content {
+	background-color: #ccc;
+	width: 830px;
+	padding: 15px;
+	margin: 0px auto;
+}
+
+#number {
+	border: 1px solid black;
+	padding: 5px 15px;
+	background-color: black;
+	color: white;
+	font-family: Consolas;
+	margin-bottom: 5px;
+}
+
+.btnSend a {
+	color: black;
+	border: 1px solid black;
+	padding: 5px 15px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 15px 0;
+}
+
+.btnSend a:hover {
+	text-decoration: underline;
+}
+
+.description {
+	border-bottom: solid 3px black;
+	padding: 15px 10px;
+	margin-bottom: 20px;
+}
+
+.description span {
+	font-weight: bold;
+	display: block;
+}
+
+.drawContainer {
+	width: 830px;
+	height: auto;
+}
+
+.drawHeaderStyle {
+	
+}
+
+.drawHeaderCol {
+	width: 413px;
+	float: left;
+	text-align: center;
+	padding: 10px 0px;
+	border: solid 1px black;
+	background-color: #eae8e8;
+}
+
+.drawContentCol {
+	width: 413px;
+	height: auto;
+	border: solid 1px black;
+	float: left;
+}
+
+.handleBarsImg {
+	text-align: center;
+}
+
+.handleBarsImg>img {
+	width: 610px;
+	height: auto;
+}
+
+#containerHTML table {
+	width: 820px;
+}
+
+#containerHTML table thead {
+	background-color: #87918f;
+	color: white;
+	text-align: center;
+}
+
+#containerHTML table tr:nth-child(even) {
+	background-color: white;
+}
+.testStyle, .testMinStyle{
+	display: inline-block;
+	padding: 5px 15px;
+	margin: 3px;
+	border: 1px solid black;
+}
+.testMinStyle{
+	background-color: purple;
+}
+.holderMovingAreaStyle{
+    position: relative;
+    height: 400px;
+    width: 820px;
+}
+.movingAreaStyle{
+    position: absolute;
+    height: 380px;
+    width: 820px;
+    border: 1px solid black;
+}
+.movingAreaStyle > div{
+    display: inline-block;
+    position: absolute;
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #568c3b;
+}
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.canvasStyle{
+	border: 1px solid black;
+	height: 400px;
+	width: 820px
+}
+.combo-box {
+    width: 200px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+    margin-right: 5px;
+}
+.combo-box h4{
+    margin: 0px;
+    padding: 5px 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.combo-box p {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 5px auto;
+    color: red;
+    font-size: 2em;
+    width: 50px;
+    text-align: center;
+    background-color: white;
+}
+.combo-box img{
+    border-radius: 10px;
+    width: 150px;
+    height: auto;
+}
+
+.combo-box:hover {
+    background-color: white;
+    opacity: 1;
+}
+
+.combo-box.selected {
+    display: block;
+    opacity: 1;
+}
+
+.combo-box.visible {
+    display: inline-block;
+}

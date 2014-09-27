@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Arrays: 2</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script data-main="scripts/app-config"
+            src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="description">
+        <span>Description:</span>
+        1. Implement a ComboBox control (like a dropdown list)
+        <ul>
+            <li>The ComboBox holds a set of items (an array)</li>
+            <li>Initially only a single item, the selected item, is visible (the ComboBox is collapsed)</li>
+            <li>When the selected item is clicked, all other items are shown (the ComboBox is expanded)
+                <ul><li>If an item is clicked, it becomes the selected item and the ComboBox collapses</li></ul>
+            </li>
+            <li>Each of the items in a ComboBox can contain any valid HTML code</li>
+            <li>Use RequireJSand handlebars.js
+                <ul><li>jQuery is not obligatory (use it if you will)</li></ul>
+            </li>
+            <li>The ComboBox should have the following usage:</li>
+        </ul>
+  <pre>var people =
+      [{ id: 1, name: "Doncho Minkov", age: 18, avatarUrl: "images/minkov.jpg" },
+      { id: 2, name: "Georgi Georgiev", age: 19, avatarUrl: "images/joreto.jpg" }];
+      var comboBox= controls.ComboBox(people);
+      var template = $("#person-template").html();
+      var comboBoxHtml= comboBox.render(template);container.innerHTML= comboBoxHtml;
+      //sample template
+      &lt;div class="person-item" id="person-item-{{id}}">
+          &lt;strong class="person-name"&gt;{{name}}&lt;/strong&gt;
+          &lt;p class="person-age"&gt;{{age}}&lt;/p&gt;
+          &lt;img src="{{avatarUrl}}" width="100px" /&gt;
+      &lt;/div&gt;</pre>
+    </div>
+
+    <div id="combo-box-container"></div>
+    <script type="text/x-handlebars-template" id="person-template">
+        <div class="combo-box" data-box="box-{{id}}">
+            <h4>{{name}}</h4>
+            <p>{{age}}</p>
+            <img src="{{avatarUrl}}"/>
+        </div>
+    </script>
+
+</div>
+</body>
+</html>

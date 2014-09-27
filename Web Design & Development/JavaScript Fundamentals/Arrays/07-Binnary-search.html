@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Arrays: 7</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 7. Write a program that finds the index of
+			given element in a sorted array of integers by using the binary
+			search algorithm (find it in Wikipedia).
+			<div>
+				<span>Characteristics</span> 
+				Every iteration eliminates half of the
+				remaining possibilities. This makes binary searches very efficient -
+				even for large collections. Our implementation relies on recursion,
+				though it is equally as common to see an iterative approach. Binary
+				search requires a sorted collection. This means the collection must
+				either be sorted before searching, or inserts/updates must be smart.
+				Also, binary searching can only be applied to a collection that
+				allows random access (indexing). 
+				<span>In The Real World</span>
+				Binary searching is frequently used thanks to its performance
+				characteristics over large collections. The only time binary
+				searching doesn't make sense is when the collection is being
+				frequently updated (relative to searches), since re-sorting will be
+				required. Hash tables can often provide better (though somewhat
+				unreliable) performance. Typically, it's relatively clear when data
+				belongs in a hash table (for frequent lookups) versus when a search
+				is needed.
+			</div>
+		</div>
+<!-- INPUT FIELD		 -->
+		<label for="numberId"> Enter sequence of numbers divide by comma (1, 4, 6, 7, 12, 13, 15, 18, 19, 20, 22, 24): </label> 
+		<input id="numberId" type="text" placeholder="value" /><br/>
+		<label for="searchNumberId"> Enter search number: </label> 
+		<input id="searchNumberId" type="text" placeholder="value" />
+		
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var readedString = jsConsole.read("#numberId");
+	var mass = readedString.split(",");
+	var searchNumber = jsConsole.readInteger("#searchNumberId");
+	var result = binarySearch(mass, searchNumber, 0, mass.length - 1);
+	var showMeResult = result >= 0 ? result : 'Not found';
+	jsConsole.writeLine("Index of search number ("+ searchNumber +") is : " + showMeResult);
+}
+
+function binarySearch(values, target, start, end) {
+	if(start > end){ 
+		return -1; 
+	}
+	var middle = Math.floor((start + end) / 2);
+	var value = values[middle];
+	if(value > target){ 
+		return binarySearch(values, target, start, middle - 1); 
+	}
+	if(value < target){ 
+		return binarySearch(values, target, middle + 1, end); 
+	}
+	return middle; 
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

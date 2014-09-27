@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Dom Operations: 3</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 3. Create a text area and two inputs with type="color"
+			<ul>
+				<li>Make the font color of the text area as the value of the first color input</li>
+				<li>Make the background color of the text area as the value of the second input</li>
+			</ul>
+		</div>
+		<div class="btnSend" id="showResBtnId">
+			<a href="#" onclick="showResult()">Run Task</a>
+		</div>
+		<div id="divContaner"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var textArea = document.createElement('textarea'),
+	inputOne = document.createElement('input'),
+	inputTwo = document.createElement('input'),
+	main = document.getElementById("divContaner");
+	textArea.style.width = '820px';
+	textArea.style.minHeight = '400px';
+	inputOne.type = 'color';
+	inputOne.id = 'text-color';
+	inputTwo.type = 'color';
+	inputTwo.id = 'bg-color';
+	inputOne.addEventListener("input", function() {
+		textArea.style.color = this.value;
+	});
+
+	inputTwo.addEventListener("input", function(){
+		textArea.style.backgroundColor = this.value;
+	});
+	main.appendChild(inputOne);
+	main.appendChild(inputTwo);
+	main.appendChild(textArea);
+	var btn = document.getElementById('showResBtnId').remove();
+
+}
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>s

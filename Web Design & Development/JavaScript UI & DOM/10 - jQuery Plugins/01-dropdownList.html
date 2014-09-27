@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery Plygins: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Create a jQuery plugin for creating dropdown list
+			<ul>
+				<li>By given the following:</li>
+				<pre>&lt;select id="dropdown"&gt;
+	&lt;option value="1"&gt;One&lt;/option&gt;
+	&lt;option value="2"&gt;Two&lt;/option&gt;
+&lt;/select&gt;</pre>
+				<li>Produces the following HTML:
+				<pre>&lt;select id="dropdown" style="display: none"&gt; …
+&lt;/select&gt;
+&lt;div class="dropdown-list-container"&gt;
+	&lt;ulclass="dropdown-list-options"&gt;
+	&lt;li class="dropdown-list-option" data-value="0"&gt;One&lt;/li&gt;
+	…
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+				</li>
+				<li>And make it work as SELECT node
+					<ul>
+						<li>Selecting an one of the generated LI nodes, selects the corresponding OPTION node</li>
+						<li>So $('#dropdown:selected')works</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<select id="dropdown">
+			<option value="1">One</option>
+			<option value="2">Two</option>
+			<option value="3">Three</option>
+			<option value="4">Four</option>
+			<option value="5">Five</option>
+			<option value="6">Six</option>
+		</select>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+$(document).ready(function() {
+	$.fn.dropdown = function () {
+	    var $this = $(this);
+	    $this.css('display', 'none'); // hide the original dropdown
+
+	    var $container = $('<div />');
+	    $container.addClass('dropdown-list-container');
+	    $container.css('width', '200px');
+	    $container.css('border', '1px solid black');
+	    $container.css('cursor', 'context-menu');
+	    
+	    var $selectedItem = $('<div />');
+	    $selectedItem.css('padding', '5px 15px');
+	    $selectedItem.text('Select country');
+	    $container.append($selectedItem);
+
+	    var $ul = $('<ul />');
+	    $ul.css('list-style-type', 'none');
+	    $ul.css('padding', 0);
+	    $ul.css('margin', 0);
+	    $ul.css('display', 'none');
+	    $ul.css('background', 'white');
+
+	    var $li = $('<li />');
+	    $li.addClass('drop-down-list-option');
+	    $li.css('padding', '5px 15px');
+	    
+	    var $options = $('option', $this);
+	    $options.each(function (index, value) {
+	        $li.text($(value).text());
+	        $ul.append($li);
+	        $li = $li.clone();
+	    });
+
+	    $container.append($ul);
+	    $this.after($container);
+	    
+	    $selectedItem.on('click', function () {
+	        $selectedItem.css('border-bottom', '1px solid black');
+	            $ul.css('display', 'block');
+	      
+	    });
+	    
+	    $ul.on('click', 'li.drop-down-list-option', function () {
+	        $selectedItem.text($(this).text());
+	        $ul.css('display', 'none');
+	        $selectedItem.css('border-bottom', 'none');
+	    })
+	    $ul.on('mouseover', 'li.drop-down-list-option', function () {
+	        $(this).css('background', '#CCC');
+	    })
+	    $ul.on('mouseout', 'li.drop-down-list-option', function () {
+	        $(this).css('background', 'white');
+	    })
+	}
+
+	 $('#dropdown').dropdown();
+});
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

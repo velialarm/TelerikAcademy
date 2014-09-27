@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Using-Objects: 5</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			5.Write a function that finds the youngest person in a given array of persons and prints his/hers full name
+			<ul>
+				<li>Each person have properties firstname, lastname and age, as shown:
+			<pre>
+	var persons = {
+		{firstname : "Gosho", lastname: "Petrov", age: 32},
+		{firstname : "Bay", lastname: "Ivan", age: 81},
+		…
+	};
+			</pre>
+				</li>
+			</ul>
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="firstNameId"> Enter Firs tName: </label> 
+		<input id="firstNameId" type="text" placeholder="First Name" />
+		<label for="lastNameId"> Enter Family Name: </label> 
+		<input id="lastNameId" type="text" placeholder="Family Name" />
+		<label for="ageId"> Enter Age: </label> 
+		<input id="ageId" type="text" placeholder="Age" />
+		<br/>
+
+		<div class="btnSend" style="display:inline-block;">
+			<a href="#" onclick="addPerson()">Add Person</a>
+		</div>
+		<div class="btnSend"  style="display:inline-block;">
+			<a href="#" onclick="showResult()">Show Youngest</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var persons = [];	
+function addPerson() {
+	var firstName = jsConsole.read("#firstNameId");
+	var lastName = jsConsole.read("#lastNameId");
+	var agePerson = jsConsole.readInteger("#ageId");
+	var person = {};
+	person.firstname = firstName;
+	person.lastname = lastName;
+	person.age = agePerson;
+	persons.push(person);
+	jsConsole.writeLine(firstName+" "+lastName+" was added. ");
+}
+
+function showResult(){
+	var youngest = new findYoungest(persons); 
+	jsConsole.writeLine("Youngest is: " 
+			+ youngest.firstname + " "
+			+youngest.lastname 
+			+" with Age: " + youngest.age);            
+}
+
+function findYoungest(arr) {
+    var minAge = Number.MAX_VALUE;
+    var youngest = {};
+    for (var i = 0; i < arr.length; i++) {
+        for (var prop in arr[i]) {
+            if (prop == "age") {
+                if (arr[i].age < minAge) {
+                    minAge = arr[i].age;
+                    youngest = arr[i];
+                }
+            }
+        }
+    }
+    return youngest;
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

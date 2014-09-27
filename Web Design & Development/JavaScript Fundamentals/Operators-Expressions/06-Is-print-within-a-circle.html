@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Operators-Expressions: 6</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			6. Write an expression that checks if given print (x,  y) is within a circle K(O, 5).
+			<p><span>Използвана формула:</span> Ако X координатата на точката минус X координатата на центъра на кръга, цялото на квадрат, плюс същото но за Y координатите на точката и X на центъра на кръга, е по-малко от Y координатата на центъра на кръга на квадрат, то точката се намира в кръга. (x – center) * (x – center) + (y – center) * (y – center) < radius * radius.</p>
+		</div>
+<!-- INPUT FIELD		 -->
+		<label for="xId"> Print X: </label> 
+		<input id="xId" type="text" placeholder="value" />
+		<label for="yId"> Print Y: </label> 
+		<input id="yId" type="text" placeholder="value" />
+		
+		<div class="btnSend">
+			<a href="#" onclick="isWithinCircle(0,5)">Check</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function isWithinCircle(center,radius) {
+	var x = jsConsole.read("#xId");
+	var y = jsConsole.read("#yId");
+	var coord = (x - center) * (x - center) + (y - center) * (y - center);
+	var isInsideCirle =  coord < radius * radius ? true : false;
+	jsConsole.writeLine("The point with X = "+ x +" and Y = "+y);
+	jsConsole.writeLine("Is inside the cirle? - "+isInsideCirle);
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

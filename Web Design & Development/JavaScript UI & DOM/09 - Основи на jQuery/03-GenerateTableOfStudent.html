@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery Overview: 3</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 3. By given an array of students, generate a table that represents these students
+			<ul>
+				<li>Each student has first name,last name and grade</li>
+				<li>Use jQuery</li>
+			</ul>
+		</div>
+		<div id="domElement">
+		</div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+$(document).ready(function() {
+	var students = [{
+		first: 'Ivan',
+		last: 'Petrov',
+		grade: 4
+	},
+	{
+		first: 'Petkanka',
+		last: 'Stopcheva',
+		grade: 3
+	},
+	{
+		first: 'Zvancho',
+		last: 'Slivkov',
+		grade: 5
+	}];
+
+	var len = students.length;
+	var tbl = $('<table border="1" width = "100%"></table>').
+		append('<tr><td>First Name</td><td>Last Name</td><td>Grade</td></tr>');
+	$('#domElement').append(tbl);
+	for(var i = 0; i< len; i++){
+		$('table').append('<tr><td>'+ students[i].first+'</td><td>'
+				+ students[i].last+'</td><td>'+ students[i].grade+'</td></tr>');
+	}
+});
+</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

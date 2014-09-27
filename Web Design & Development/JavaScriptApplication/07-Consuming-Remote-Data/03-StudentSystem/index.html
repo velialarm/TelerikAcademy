@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>App - </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/require.js" data-main="js/app"></script>
+</head>
+<body>
+<div>
+    <label for="tb-name">Name:</label>
+    <input id="tb-name" name="tb-name" type="text" />
+
+    <label for="tb-grade">Grade:</label>
+    <input id="tb-grade" name="tb-grade" type="number" min='1' max='12' />
+
+    <button id='btn-add-student'>Add new</button>
+</div>
+
+<div>
+    <label for="tb-id">ID:</label>
+    <input id="tb-id" name="tb-id" type="text" />
+    <button id='btn-remove-student'>Remove</button>
+</div>
+
+<div class="messages">
+    <strong class="message success">
+    </strong>
+    <strong class="message error">
+    </strong>
+</div>
+<div id="students-container"></div>
+
+<script id="template" type="text/x-handlebars-template">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Grade</th>
+        </tr>
+        {{#rows}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{grade}}</td>
+        </tr>
+        {{/rows}}
+    </table>
+</script>
+</body>
+</html>

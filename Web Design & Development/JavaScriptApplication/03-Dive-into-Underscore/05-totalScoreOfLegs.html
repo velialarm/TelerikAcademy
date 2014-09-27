@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Document Object Model: 5</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../js/underscore.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 5. By a given array of animals, find the
+			total number of legs
+			<ul><li>Each animal can have 2, 4, 6, 8 or 100 legs</li></ul>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var animals = [
+            {name: "Bald Eagle", specie : "Birds", legs: 2},
+            {name: "Golden Eagle", specie : "Birds", legs: 1},
+            {name: "Red Fox", specie : "Mammals", legs: 4},
+            {name: "Giant Otter", specie : "Mammals", legs: 3},
+            {name: "Anaconda", specie : "Reptiles", legs: 0},
+            {name: "Brown Bear", specie : "Mammals", legs: 4},
+            {name: "Dugong", specie : "Mammals", legs: 5},
+];
+var totalScore = 0;
+_.each(animals, function(animal){
+	totalScore += animal.legs;
+});
+var result = 'Total score of legs is: '+ totalScore;
+console.log(result);
+jsConsole.writeLine(result);
+	</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

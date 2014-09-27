@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Data-Types-and-Variables: 4</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			4. Create null, undefined variables and try typeof on them
+		</div>
+<!-- INPUT FIELD		 -->
+		
+		<div class="btnSend">
+			<a href="#" onclick="showNullUndefinedVariables()">Run Me!</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showNullUndefinedVariables() {
+	var nullVariable = null;
+	var undefinedVariable = undefined;
+	
+	jsConsole.writeLine("nullVariable type is -> "+ typeof(nullVariable));
+	jsConsole.writeLine("undefinedVariable type is -> "+ typeof(undefinedVariable));
+}
+
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

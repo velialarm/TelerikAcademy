@@ -1,0 +1,137 @@
+﻿<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Laptop Shop</title>
+<link href="css/05-laptops.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<nav id="header">
+		<ul>
+			<li><a href="#">Apple </a></li>
+			<li><a href="#">Toshiba</a></li>
+			<li><a href="#"> lenovo </a></li>
+			<li><a href="#">Dell </a></li>
+			<li><a href="#">Asus </a></li>
+			<li><a href="#">Acer </a></li>
+			<li><a href="#">HP </a></li>
+		</ul>
+		<hr>
+	</nav>
+
+	<div id="main">
+		<section id="content">
+			<article id="product">
+				<div class="name">Apple Mac Book Air</div>
+				<div class="snimka">
+					<img src="img/laptop1.jpg" width="138" height="98" alt="laptopa">
+				</div>
+				<div class="price">1300 USD</div>
+				<div class="tekst">
+					64 GB SSD<br> 2GB DDR<br> Intel Core i5
+				</div>
+
+			</article>
+
+			<article id="product">
+				<div class="name">Apple Mac Book Air</div>
+				<div class="snimka">
+					<img src="img/laptop1.jpg" width="138" height="98" alt="laptopa">
+				</div>
+				<div class="price">1300 USD</div>
+				<div class="tekst">
+					64 GB SSD<br> 2GB DDR<br> Intel Core i5
+				</div>
+
+			</article>
+
+			<article id="product">
+				<div class="name">Apple Mac Book Air</div>
+				<div class="snimka">
+					<img src="img/laptop1.jpg" width="138" height="98" alt="laptopa">
+				</div>
+				<div class="price">1300 USD</div>
+				<div class="tekst">
+					64 GB SSD<br> 2GB DDR<br> Intel Core i5
+				</div>
+
+			</article>
+
+			<article id="product">
+				<div class="name">Apple Mac Book Air</div>
+				<div class="snimka">
+					<img src="img/laptop1.jpg" width="138" height="98" alt="laptopa">
+				</div>
+				<div class="price">1300 USD</div>
+				<div class="tekst">
+					64 GB SSD<br> 2GB DDR<br> Intel Core i5
+				</div>
+
+			</article>
+			<article id="product">
+				<div class="name">Apple Mac Book Air</div>
+				<div class="snimka">
+					<img src="img/laptop1.jpg" width="138" height="98" alt="laptopa">
+				</div>
+				<div class="price">1300 USD</div>
+				<div class="tekst">
+					64 GB SSD<br> 2GB DDR<br> Intel Core i5
+				</div>
+
+			</article>
+			<article id="product">
+				<div class="name">Apple Mac Book Air</div>
+				<div class="snimka">
+					<img src="img/laptop1.jpg" width="138" height="98" alt="laptopa">
+				</div>
+				<div class="price">1300 USD</div>
+				<div class="tekst">
+					64 GB SSD<br> 2GB DDR<br> Intel Core i5
+				</div>
+
+			</article>
+		</section>
+	</div>
+
+	<aside id="right">
+		<div class="ran_1">
+			Min price <span id="range">250</span>USD <input type="range" min="0"
+				max="500" value="250" step="50" onchange="showValue(this.value)" />
+			<script type="text/javascript">
+                function showValue(newValue) {
+                    document.getElementById("range").innerHTML = newValue;
+                }
+            </script>
+		</div>
+		<div class="ran_1">
+			Max Price <span id="range_max">750</span>USD <input type="range"
+				min="0" max="1500" value="750" step="50"
+				onchange="showMaxValue(this.value)" />
+			<script type="text/javascript">
+                function showMaxValue(newMaxValue) {
+                    document.getElementById("range_max").innerHTML = newMaxValue;
+                }
+            </script>
+		</div>
+		<div class="ran_1">
+			Min RAM <span id="range_minRam">4</span>GB <input type="range"
+				min="0" max="4" value="2" step="1" onchange="showMinRam(this.value)" />
+			<script type="text/javascript">
+                function showMinRam(newMinRam) {
+                    document.getElementById("range_minRam").innerHTML = newMinRam;
+                }
+            </script>
+		</div>
+		<div class="ran_1">
+			Max RAM <span id="range_max_ram">4</span>GB <input type="range"
+				min="0" max="16" value="4" step="1"
+				onchange="showMaxRam(this.value)" />
+			<script type="text/javascript">
+                function showMaxRam(newMaxRam) {
+                    document.getElementById("range_max_ram").innerHTML = newMaxRam;
+                }
+            </script>
+		</div>
+	</aside>
+</body>
+</html>

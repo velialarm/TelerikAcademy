@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery Overview: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="../js/jquery-2.1.1.js"></script>
+<style>
+.clearfix:after,.carousel-panels:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+.sliderContainer {
+	position: relative;
+	overflow: hidden;
+}
+
+.slider-panels {
+	position: relative;
+	left: 0;
+	width: 10000%;
+}
+
+.slider-panel {
+	float: left;
+	width: 1%;
+}
+.slider-panel > p{
+	padding: 0px 35px;
+}
+
+.slider-arrow-left, .slider-arrow-right {
+	position: absolute;
+	top: 50%;
+	margin-top: -1em;
+	z-index: 1;
+}
+
+.slider-arrow-left {
+	left: 0;
+}
+
+.slider-arrow-right {
+	right: 0;
+}
+
+/* TODO: translate - http://goo.gl/wlhXJ */
+.slider-animated .slider-panels {
+	-webkit-transition: left 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+	-moz-transition: left 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+	-o-transition: left 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+	transition: left 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.slider-demo {
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 820px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Create a slider control using jQuery
+			<ul>
+				<li>The slider can have many slides</li>
+				<li>Only one slide is visible at a time</li>
+				<li>Each slide contains HTML code
+					<ul>
+						<li>i.e. it can contain images, forms, divs, headers, links,
+							etc…</li>
+					</ul>
+				</li>
+				<li>Implement functionality for changing the visible slide
+					after 5 seconds</li>
+				<li>Create buttons for next and previous slide</li>
+			</ul>
+		</div>
+		<article class="sliderContainer slider-animated slider-demo">
+		<button class="slider-arrow-left">&lt;</button>
+		<div class="slider-panels">
+			<div class="slider-panel">
+				<h1>Text test One</h1>
+				<p>Lorem Ipsum is simply dummy text of the printing and
+					typesetting industry. Lorem Ipsum has been the industry's standard
+					dummy text ever since the 1500s, when an unknown printer took a
+					galley of type and scrambled i</p>
+			</div>
+			<div class="slider-panel">
+				<h1>Opala</h1>
+				<p>"Sed ut perspiciatis unde omnis iste natus error sit
+					voluptatem accusantium doloremque laudantium, totam rem aperiam,
+					eaque ipsa quae ab illo inventore veritatis et quasi architecto
+					beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+					voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+					magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+					porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+					consectetur, adipisci velit, sed quia non numquam eius modi tempora
+					incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+					enim ad minima veniam, quis nostrum exercitationem ullam corporis
+					suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+					Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+					esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+					fugiat quo voluptas nulla pariatur?"</p>
+			</div>
+			<div class="slider-panel">
+				<h1>Testing someting</h1>
+				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus
+					qui blanditiis praesentium voluptatum deleniti atque corrupti quos
+					dolores et quas molestias excepturi sint occaecati cupiditate non
+					provident, similique sunt in culpa qui officia deserunt mollitia
+					animi, id est laborum et dolorum fuga. Et harum quidem rerum
+					facilis est et expedita distinctio. Nam libero tempore, cum soluta
+					nobis est eligendi optio cumque nihil impedit quo minus id quod
+					maxime placeat facere possimus, omnis voluptas assumenda est, omnis
+					dolor repellendus. Temporibus autem quibusdam et aut officiis
+					debitis aut rerum necessitatibus saepe eveniet ut et voluptates
+					repudiandae sint et molestiae non recusandae. Itaque earum rerum
+					hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+					maiores alias consequatur aut perferendis doloribus asperiores
+					repellat."</p>
+			</div>
+		</div>
+		<button class="slider-arrow-right">&gt;</button>
+		</article>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+$(document).ready(function() {
+	 'use strict'
+
+    $.fn.sliderContainer = function() {
+        this.each(function() {
+            var panels = $(this).find('.slider-panels'),
+                totalPanels = panels.find('.slider-panel').size(),
+                currentPanel = 0
+
+            function slideBy(delta) {
+                currentPanel = (currentPanel + delta + totalPanels) % totalPanels
+                panels.css('left', -(currentPanel * 100) + '%')
+            }
+
+            $(this).find('.slider-arrow-left').click(function() {
+                slideBy(-1)
+            })
+
+            $(this).find('.slider-arrow-right').click(function() {
+                slideBy(1)
+            })
+
+            setInterval(function() {
+                slideBy(1)
+            }, 5 * 1000);
+        })
+    }
+    $('.sliderContainer').sliderContainer();
+});
+</script>
+	<!-- END TASK CODE	 -->
+
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

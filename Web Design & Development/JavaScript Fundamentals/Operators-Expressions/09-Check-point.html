@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Operators-Expressions: 7</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			9. Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+		</div>
+<!-- INPUT FIELD		 -->
+		<label for="xId"> Point x: </label> 
+		<input id="xId" type="text" placeholder="value" />
+		<label for="yId"> Point y: </label> 
+		<input id="yId" type="text" placeholder="value" />
+		
+		<div class="btnSend">
+			<a href="#" onclick="checkPoint()">Check</a>
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+		
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function checkPoint() {
+	var x = jsConsole.readInteger("#xId");
+	var y = jsConsole.readInteger("#yId");
+	var isInCircle = isWithinCircle(x, y, 1, 1, 3);
+	var isOutRect = isOutRectangle(x, y,1,-1, 6, 2);
+	jsConsole.writeLine("Point("+x+", "+y+") is inside the cirle? - "+isInCircle);
+	jsConsole.writeLine("Point("+x+", "+y+") is outside the rectangle? - "+isOutRect);
+}
+function isWithinCircle(x, y, centerX, centerY, radius) {
+	var coord = (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY);
+	var isInsideCirle =  coord < radius * radius ? true : false;
+	return isInsideCirle;
+}
+function isOutRectangle(pointX, pointY,rectTop,rectLeft, rectWidth, rectHeight){
+	 var outRect =  ((pointX < rectLeft) || 
+			 (pointX > rectLeft + rectWidth) || 
+			 (pointY > rectTop) || 
+			 (pointY < rectTop - rectHeight));
+	return outRect;
+}
+	</script>
+<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

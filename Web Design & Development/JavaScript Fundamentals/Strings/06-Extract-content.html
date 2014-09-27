@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Strings: 6</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/googlecode.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			6. Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
+			<pre>
+	&lt;html&gt;&lt;head&gt;&lt;title&gt;Sample site&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;text&lt;div&gt;more 
+	text&lt;/div&gt;and more...&lt;/div&gt;in body&lt;/body&gt;&lt;/html&gt;
+</pre>
+			result: 
+			<pre>	Sample sitetextmore textand more...in body</pre>
+		</div>
+		<!-- INPUT FIELD		 -->
+		<label for="digitId"> Enter text: </label> 
+		<textarea id="textId" rows="3" cols="100"></textarea><br/>
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var txt = jsConsole.read("#textId");
+	jsConsole.writeLine("Result before extract is: ");
+	jsConsole.writeLine(txt);
+	jsConsole.writeLine("Result after extract: " );
+	jsConsole.writeLine(extractText(txt));
+}
+function extractText(html) {
+	return html.replace(/<(.*?)>/g, '')
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

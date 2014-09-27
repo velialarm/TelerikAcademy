@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#content {
+	font-family: Consolas;
+	color:#0094ff;
+}
+#content:first-letter{
+	font-family: "Edwardian Script ITC";
+	font-size:3em;
+}
+#content:first-line{
+	font-weight:bolder;
+}

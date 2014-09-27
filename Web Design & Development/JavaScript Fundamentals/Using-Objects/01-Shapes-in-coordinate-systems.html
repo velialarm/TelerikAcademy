@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Using-Objects: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 
+			1. Write functions for working with shapes in  standard Planar coordinate system
+			<ul>
+				<li>Points are represented by coordinates P(X, Y)</li>
+				<li>Lines are represented by two points, marking their beginning and ending
+					<ul>
+						<li>L(P1(X1,Y1), P2(X2,Y2))</li>
+					</ul>
+				</li>
+				<li>Calculate the distance between two points</li>
+				<li>Check if three segment lines can form a triangle</li>
+			</ul>
+		</div>
+		<!-- INPUT FIELD		 -->
+		<div class="PointsStyle"><span class="LinePointsStyle">Enter Points for Line1:</span>
+			<span class="underPointsStyle">Points 1:</span>
+			<label for="L1pointX1Id"> X: </label> 
+			<input id="L1pointX1Id" type="text" placeholder="point 1 X" />
+			<label for="L1pointY1Id"> Y: </label> 
+			<input id="L1pointY1Id" type="text" placeholder="point 1 Y" />
+			
+			<span class="underPointsStyle">Points 2:</span>
+			<label for="L1pointX2Id"> X: </label> 
+			<input id="L1pointX2Id" type="text" placeholder="point 2 X" />
+			<label for="L1pointY2Id"> Y: </label> 
+			<input id="L1pointY2Id" type="text" placeholder="point 2 Y" />
+		</div>
+		<hr/>
+		<div class="PointsStyle"><span class="LinePointsStyle">Enter Points for Line 2:</span>
+			<span class="underPointsStyle">Points 1:</span>
+			<label for="L2pointX1Id"> X: </label> 
+			<input id="L2pointX1Id" type="text" placeholder="point 1 X" />
+			<label for="L2pointY1Id"> Y: </label> 
+			<input id="L2pointY1Id" type="text" placeholder="point 1 Y" />
+			
+			<span class="underPointsStyle">Points 2:</span>
+			<label for="L2pointX2Id"> X: </label> 
+			<input id="L2pointX2Id" type="text" placeholder="point 2 X" />
+			<label for="L2pointY2Id"> Y: </label> 
+			<input id="L2pointY2Id" type="text" placeholder="point 2 Y" />
+		</div>
+		<hr/>
+		<div class="PointsStyle"><span class="LinePointsStyle">Enter Points for Line 3:</span>
+			<span class="underPointsStyle">Points 1:</span>
+			<label for="L3pointX1Id"> X: </label> 
+			<input id="L3pointX1Id" type="text" placeholder="point 1 X" />
+			<label for="L3pointY1Id"> Y: </label> 
+			<input id="L3pointY1Id" type="text" placeholder="point 1 Y" />
+			
+			<span class="underPointsStyle">Points 2:</span>
+			<label for="L3pointX2Id"> X: </label> 
+			<input id="L3pointX2Id" type="text" placeholder="point 2 X" />
+			<label for="L3pointY2Id"> Y: </label> 
+			<input id="L3pointY2Id" type="text" placeholder="point 2 Y" />
+		</div>
+		
+		
+
+		<div class="btnSend">
+			<a href="#" onclick="showResult()">Show result</a>
+		</div>
+		<div class="consoleTitle">Console:</div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+function showResult() {
+	var line1_p1_x = jsConsole.readInteger("#L1pointX1Id");
+	var line1_p1_y = jsConsole.readInteger("#L1pointY1Id");
+	var line1_p2_x = jsConsole.readInteger("#L1pointX2Id");
+	var line1_p2_y = jsConsole.readInteger("#L1pointY2Id");
+	var line1_point1 = Point(line1_p1_x, line1_p1_y);	// Point 1 for line 1
+	var line1_point2 = Point(line1_p2_x, line1_p2_y);	// Point 1 for line 1
+	var line1 = Line(line1_point1, line1_point2);		
+
+	var line2_p1_x = jsConsole.readInteger("#L2pointX1Id");
+	var line2_p1_y = jsConsole.readInteger("#L2pointY1Id");
+	var line2_p2_x = jsConsole.readInteger("#L2pointX2Id");
+	var line2_p2_y = jsConsole.readInteger("#L2pointY2Id");
+	var line2_point1 = Point(line2_p1_x, line2_p1_y);	// Point 1 for line 1
+	var line2_point2 = Point(line2_p2_x, line2_p2_y);	// Point 1 for line 1
+	var line2 = Line(line2_point1, line2_point2);	
+
+	var line3_p1_x = jsConsole.readInteger("#L2pointX1Id");
+	var line3_p1_y = jsConsole.readInteger("#L2pointY1Id");
+	var line3_p2_x = jsConsole.readInteger("#L2pointX2Id");
+	var line3_p2_y = jsConsole.readInteger("#L2pointY2Id");
+	var line3_point1 = Point(line3_p1_x, line3_p1_y);	// Point 1 for line 1
+	var line3_point2 = Point(line3_p2_x, line3_p2_y);	// Point 1 for line 1
+	var line3 = Line(line3_point1, line3_point2);	
+	
+	if (CanFormTriangle(line1, line2, line3)) {
+        jsConsole.writeLine("Lines can form a triangle!")
+    }
+    else {
+        jsConsole.writeLine("Lines cannot form a triangle!")
+    }
+}
+
+function Point(x, y) {
+    return {
+        X: x,
+        Y: y
+    }
+}
+
+function Line(pointOne, pointTwo) {
+    return {
+        P1: pointOne,
+        P2: pointTwo,
+        Length: CalclulateDistance(pointOne, pointTwo)
+    }
+}
+
+function CalclulateDistance(pointOne, pointTwo) {
+	var calcPartPointX = (pointTwo.X - pointOne.X) * (pointTwo.X - pointOne.X);
+	var calcPartPointY = (pointTwo.Y - pointOne.Y) * (pointTwo.Y - pointOne.Y)
+	var result = Math.sqrt(calcPartPointX + calcPartPointY);
+    return result;
+}
+
+function CanFormTriangle(lineOne, lineTwo, lineThree) {
+    if (((lineOne.Length + lineTwo.Length) > lineThree.Length) &&
+        ((lineOne.Length + lineThree.Length) > lineTwo.Length) &&
+        ((lineThree.Length + lineTwo.Length) > lineOne.Length)) {
+        return true;
+    }
+    return false;
+}
+	</script>
+	<!-- END TASK CODE	 -->
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

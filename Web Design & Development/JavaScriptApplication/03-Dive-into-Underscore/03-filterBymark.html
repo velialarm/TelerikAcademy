@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Document Object Model: 3</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../js/underscore.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 3. Write a function that by a given array
+			of students finds the student with highest marks.
+		</div>
+		<div class="consoleTitle">Console: </div>
+		<div id="console"></div>
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<script type="text/javascript" src="../js/js-console.js"></script>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+var students = [
+            {firstName : "Ivan", lastName: "Ivanov", age: 22, mark: 3},
+            {firstName : "Pesho", lastName: "Stoqnov", age: 22, mark: 5},
+            {firstName : "Kifla", lastName: "Zurlova", age: 28, mark: 4},
+            {firstName : "Zakam", lastName: "Draganov", age: 12, mark: 6},
+            {firstName : "Mishka", lastName: "Lavova", age: 32, mark: 5},
+            {firstName : "Zaek", lastName: "Blokov", age: 21, mark: 6},
+            {firstName : "Dranka", lastName: "Muzikanov", age: 26, mark: 3},
+            {firstName : "Nebesen", lastName: "Siqnov", age: 18, mark: 2}
+];
+var maxMark = 2;
+_.each(students, function (student) {
+	if(student.mark > maxMark){
+		maxMark = student.mark;
+	}
+});
+var filterByMark = _.filter(students, function(student) {
+	if (student.mark ==  maxMark) {
+		return true;
+	} else {
+		return false;
+	}
+});
+_.each(filterByMark, function (student) {
+	var result = '- ' + student.firstName + ' ' + student.lastName;
+    console.log(result);
+    jsConsole.writeLine(result);
+});
+	</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>

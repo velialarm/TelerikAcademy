@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTML5 Canvas: 1</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../highlight/styles/default.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="content">
+		<div class="description">
+			<span>Description:</span> 1. Draw the following graphics using canvas:
+		</div>
+		
+		<div class="drawContainer">
+			<div class="drawHeaderStyle">
+				<div class="drawHeaderCol">Screenshot</div>
+				<div class="drawHeaderCol">Live sample</div>
+			</div>
+			<div>
+				<div class="drawContentCol">
+					<img src="../images/graphicCanvasDraw.png" alt="Draw the following graphics using canvas"/>
+				</div>
+				<div class="drawContentCol">
+					<canvas id="canvas-content" width="410" height="300">
+						You Browser cannot use canvas!
+					</canvas>
+				</div>
+			</div>
+		</div>
+		
+		<div id="highlightCodeID"></div>
+
+	</div>
+	<!-- START TASK CODE	 -->
+	<script id="taskJavaScriptCode" type="text/javascript">
+(function() {
+	'use strict';
+	var canvas = document.getElementById("canvas-content");
+	if (canvas.getContext) {
+	    var ctx = canvas.getContext('2d');
+	    setBackground("#FFF");
+	    drawHead();
+	    drawBice();
+	    drawHouse();
+	}
+	
+	function setBackground(color){
+		var widthCanvas = canvas.getAttribute("width");
+		var heigthCanvas = canvas.getAttribute("height");
+		ctx.beginPath();
+		ctx.fillStyle = color;
+		ctx.fillRect(0, 0, widthCanvas, heigthCanvas);
+		ctx.closePath();
+	}
+
+	function drawHouse(){
+	    var houseStroke = "#000000";
+	    var houseColor = "#975b5b";
+	    ctx.beginPath();
+	    ctx.lineWidth = 2;
+	    ctx.fillStyle = houseColor;
+	    ctx.strokeStyle = houseStroke;
+	    ctx.fillRect(250, 100, 130, 100);
+	    ctx.strokeRect(250, 100, 130, 100);
+	    ctx.closePath();
+	 
+	    // ROOF
+	    ctx.beginPath();
+	    ctx.lineWidth = 2;
+	    ctx.moveTo(250, 100);
+	    ctx.lineTo(380, 100);
+	    ctx.lineTo(315, 30);
+	    ctx.lineTo(250, 100);
+	    ctx.stroke();
+	    ctx.fill();
+	    ctx.closePath();
+	 
+	    // WINDOWS
+	    drawWindows(260, 110);
+	    drawWindows(320, 110);
+	    drawWindows(320, 150);
+
+		function drawWindows(x, y){
+		    ctx.beginPath();
+		    ctx.fillStyle = houseStroke;
+		    ctx.strokeStyle = houseColor;
+		    ctx.lineWidth = 2;
+			ctx.fillRect(x, y, 50, 30);
+			
+			ctx.moveTo(x, y + 15);
+			ctx.lineTo(x+50, y + 15);
+			ctx.moveTo(x + 25, y);
+			ctx.lineTo(x + 25, y+30);
+			ctx.stroke();
+			ctx.closePath();
+		}
+	    
+	 
+	    // DOOR
+	    ctx.beginPath();
+	    ctx.strokeStyle = "#000000";
+	    ctx.fillStyle = "#975b5b";
+	    ctx.lineWidth = 2;
+	    ctx.save();
+	    ctx.scale(1, 0.6);
+	    ctx.arc(280, 280, 17, Math.PI + 0.1, Math.PI * 2 - 0.1, false);
+	    ctx.restore();
+	    ctx.moveTo(263, 165);
+	    ctx.lineTo(263, 200);
+	    ctx.moveTo(280, 157);
+	    ctx.lineTo(280, 200);
+	    ctx.moveTo(297, 165);
+	    ctx.lineTo(297, 200);
+	    ctx.stroke();
+	    ctx.closePath();
+	 
+	    // DOORKNOBS
+	    drawDoorKnobs(273);
+	    drawDoorKnobs(287);
+	    function drawDoorKnobs(x){
+		    ctx.beginPath();
+		    ctx.lineWidth = 1;
+		    ctx.arc(x, 185, 2, 0, Math.PI * 2, false);
+		    ctx.stroke();
+		    ctx.closePath();
+		}
+	 
+	    // CHIMNEY
+	    ctx.fillRect(345, 40, 20, 50);
+	    ctx.moveTo(345, 40);
+	    ctx.lineTo(345, 85);
+	    ctx.moveTo(365, 40);
+	    ctx.lineTo(365, 85);
+	    ctx.stroke();
+	    ctx.save();
+
+	    ctx.beginPath();
+	    ctx.scale(1, 0.3);
+	    ctx.arc(355, 140, 10, 0, Math.PI * 2, false);
+	    ctx.fill();
+	    ctx.stroke();
+	}    
+	    
+	function drawBice(){
+	    // WHEELS
+	    var blue = "#90cad7";
+	    var scrokeStyleBlue = "#1b4d58";
+	    ctx.beginPath();
+	    ctx.arc(60, 250, 30, 0, Math.PI * 2, false);
+	    ctx.fillStyle = blue;
+	    ctx.fill();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeStyleBlue;
+	    ctx.stroke();
+	    ctx.closePath();
+	    ctx.beginPath();
+	    ctx.arc(180, 250, 30, 0, Math.PI * 2, false);
+	    ctx.fillStyle = blue;
+	    ctx.fill();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeStyleBlue;
+	    ctx.stroke();
+	    ctx.closePath();
+	 
+	    // FRAME
+	    ctx.beginPath();
+	    ctx.moveTo(60, 250);
+	    ctx.lineTo(100, 210);
+	    ctx.lineTo(170, 200);
+	    ctx.lineTo(120, 250);
+	    ctx.lineTo(60, 250);
+	    ctx.stroke();
+	    ctx.closePath();
+	 
+	    // PEDALS
+	    ctx.beginPath();
+	    ctx.arc(120, 250, 10, 0, Math.PI * 2, false);
+	    ctx.stroke();
+	    ctx.moveTo(120, 250);
+	    ctx.lineTo(120, 230);
+	    ctx.moveTo(120, 250);
+	    ctx.lineTo(120, 270);
+	    ctx.stroke();
+	    ctx.closePath();
+	 
+	    // SEAT
+	    ctx.beginPath();
+	    ctx.moveTo(120, 250);
+	    ctx.lineTo(90, 190);
+	    ctx.moveTo(80, 190);
+	    ctx.lineTo(100, 190);
+	    ctx.stroke();
+	    ctx.closePath();
+	 
+	    // FRONT FRAME
+	    ctx.beginPath();
+	    ctx.moveTo(180, 250);
+	    ctx.lineTo(165, 180);
+	    ctx.lineTo(145, 200);
+	    ctx.moveTo(165, 180);
+	    ctx.lineTo(175, 168);
+	    ctx.stroke();
+	    ctx.closePath();
+	
+	}
+		    
+	function drawHead(){
+	//HEAD
+	    var blue = "#90cad7";
+	    var scrokeStyleBlue = "#1b4d58";
+	 	var headBlue = "#396693";
+	    var scrokeHeadStyleBlue = "#272523";
+	    ctx.beginPath();
+	    ctx.arc(100, 130, 40, 0, Math.PI * 2, false);
+	    ctx.fillStyle = blue;
+	    ctx.fill();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeStyleBlue;
+	    ctx.stroke();
+	    ctx.closePath();
+	
+	 // HAT
+	    ctx.save();
+	    ctx.scale(1, 0.2);
+	    ctx.beginPath();
+	    ctx.arc(100, 470, 50, 0, Math.PI * 2, false);
+	    ctx.fillStyle = headBlue;
+	    ctx.fill();
+	    ctx.restore();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeHeadStyleBlue;
+	    ctx.stroke();
+	    ctx.restore();
+	    ctx.closePath(); 
+	 
+	    ctx.save();
+	    ctx.scale(1, 0.35);
+	    ctx.beginPath();
+	    ctx.arc(100, 245, 30, 0, Math.PI * 2, false);
+	    ctx.restore();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeHeadStyleBlue;
+	    ctx.stroke();
+	    ctx.restore();
+	    ctx.closePath();
+	 
+	    ctx.fillStyle = headBlue;
+	    ctx.fillRect(71, 41, 59, 45);
+	    ctx.closePath();
+	    ctx.beginPath();
+	    ctx.moveTo(70, 40);
+	    ctx.lineTo(70, 85);
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeHeadStyleBlue;
+	    ctx.stroke();
+	    ctx.moveTo(130, 40);
+	    ctx.lineTo(130, 85);
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeHeadStyleBlue;
+	    ctx.stroke();
+	
+	    ctx.save();
+	    ctx.scale(1, 0.35);
+	    ctx.beginPath();
+	    ctx.arc(100, 120, 30, 0, Math.PI * 2, false);
+	    ctx.fillStyle = headBlue;
+	    ctx.fill();
+	    ctx.restore();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeHeadStyleBlue;
+	    ctx.stroke();
+	    ctx.restore();
+	    ctx.closePath();
+	
+	 // EYES
+	    ctx.save();
+	    ctx.scale(1, 0.65);
+	    ctx.beginPath();
+	    ctx.arc(80, 185, 8, 0, Math.PI * 2, false);
+	    ctx.fillStyle = blue;
+	    ctx.fill();
+	    ctx.restore();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeStyleBlue;
+	    ctx.stroke();
+	    ctx.restore();
+	    ctx.closePath();
+	    ctx.save();
+	    ctx.scale(0.6, 1);
+	    ctx.beginPath();
+	    ctx.arc(130, 121, 5, 0, Math.PI * 2, false);
+	    ctx.fillStyle = scrokeStyleBlue;
+	    ctx.fill();
+	    ctx.restore();
+	    ctx.closePath();
+	 
+	    ctx.save();
+	    ctx.scale(1, 0.65);
+	    ctx.beginPath();
+	    ctx.arc(110, 185, 8, 0, Math.PI * 2, false);
+	    ctx.fillStyle = blue;
+	    ctx.fill();
+	    ctx.restore();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeStyleBlue;
+	    ctx.stroke();
+	    ctx.restore();
+	    ctx.closePath();
+	    ctx.save();
+	    ctx.scale(0.6, 1);
+	    ctx.beginPath();
+	    ctx.arc(180, 121, 5, 0, Math.PI * 2, false);
+	    ctx.fillStyle = scrokeStyleBlue;
+	    ctx.fill();
+	    ctx.restore();
+	    ctx.closePath();
+	 
+	    // NOSE
+	    ctx.beginPath();
+	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = scrokeStyleBlue;
+	    ctx.moveTo(95, 120);
+	    ctx.lineTo(85, 140);
+	    ctx.lineTo(95, 140);
+	    ctx.stroke();
+	    ctx.closePath();
+	 
+	    // MOUTH
+	    ctx.save();
+	    ctx.beginPath();
+	    ctx.setTransform(1, 0.1, 0, 0.3, 0, 0);
+	    ctx.arc(95, 480, 18, 0, Math.PI * 2, false);
+	    ctx.fillStyle = blue;
+	    ctx.fill();
+	    ctx.lineWidth = 3;
+	    ctx.strokeStyle = scrokeHeadStyleBlue;
+	    ctx.stroke();
+	    ctx.closePath();
+	    ctx.restore();
+	  }
+})();
+</script>
+	<!-- END TASK CODE	 -->
+	
+	<script type="text/javascript" src="../js/move-script-to-highlight.js"></script>
+</body>
+</html>
