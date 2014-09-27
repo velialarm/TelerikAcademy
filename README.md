@@ -12,3 +12,10 @@
 - JavaScript Applications
 - JavaScript Single-Page Applications
 
+# Programing with C#
+- Data Structure and Algoritms
+
+# Hybrid Mobile Applications
+
+# Databases
+
