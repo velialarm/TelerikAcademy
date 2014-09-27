@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.TreeOperations", "1.TreeOperations\1.TreeOperations.csproj", "{A5EDBEEE-AD9A-478A-8B0E-D2B43BA753EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.DirectoryTraversal", "2.DirectoryTraversal\2.DirectoryTraversal.csproj", "{28B430B8-EE1E-4F79-970F-6493A8DBEF1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.DirectoryTree", "3.DirectoryTree\3.DirectoryTree.csproj", "{A4216AD5-6DFE-4973-9F82-D5CC2C13401A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5EDBEEE-AD9A-478A-8B0E-D2B43BA753EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5EDBEEE-AD9A-478A-8B0E-D2B43BA753EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5EDBEEE-AD9A-478A-8B0E-D2B43BA753EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5EDBEEE-AD9A-478A-8B0E-D2B43BA753EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B430B8-EE1E-4F79-970F-6493A8DBEF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B430B8-EE1E-4F79-970F-6493A8DBEF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B430B8-EE1E-4F79-970F-6493A8DBEF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B430B8-EE1E-4F79-970F-6493A8DBEF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4216AD5-6DFE-4973-9F82-D5CC2C13401A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4216AD5-6DFE-4973-9F82-D5CC2C13401A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4216AD5-6DFE-4973-9F82-D5CC2C13401A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4216AD5-6DFE-4973-9F82-D5CC2C13401A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

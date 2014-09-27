@@ -1,0 +1,6 @@
+DFS(node) 
+{ 
+	for each child c of node 
+	DFS(c); 
+	print the current node; 
+}

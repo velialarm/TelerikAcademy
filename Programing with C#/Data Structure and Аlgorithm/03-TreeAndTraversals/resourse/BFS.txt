@@ -1,0 +1,9 @@
+BFS(node) 
+{
+	queue <- node 
+	while queue not empty
+		v <- queue 
+		print v 
+		for each child c of v 
+			queue <- c 
+}

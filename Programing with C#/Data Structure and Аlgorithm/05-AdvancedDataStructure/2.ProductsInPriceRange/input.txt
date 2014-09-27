@@ -1,0 +1,29 @@
+﻿AddProduct Beer Zagorka;1.20
+AddProduct Beer Zagorka Gold;0.85
+AddProduct Beer Kamenitza;1.05
+AddProduct Rakiya Grozdova;6.98
+AddProduct Rakiya Muskatova;7.33
+AddProduct Mastika Peshtera;8.22
+AddProduct Rakiya;12
+AddProduct Rakiya Grozdova;10.8
+AddProduct Rakiya;12
+AddProduct Beer Zagorka Draft;0.76
+AddProduct Vodka;11.33
+AddProduct Vodka;12.36
+AddProduct Vodka Nashenska;4.66
+AddProduct Rakiya Nashenska;3.7
+AddProduct Rakiya Nashenska;3.7
+AddProduct Rakiya Mente;1.25
+AddProduct Oslepitelna Rakiya;0.96
+AddProduct Vodka Studentska;2.45
+AddProduct Romsko Pivo;0.36
+AddProduct Dolnoprobna Bira;0.32
+AddProduct rakiya;8.5
+AddProduct vodka;9.6
+AddProduct Beer Zagorka;1.2
+AddProduct Vodka;8.3
+FindProductsByPriceRange 1.20;1.25
+FindProductsByPriceRange 0.00;0.10
+FindProductsByPriceRange 3.0;7
+FindProductsByPriceRange 0;0.99
+End
