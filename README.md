@@ -11,6 +11,7 @@
 - JavaScript OOP
 - JavaScript Applications
 - JavaScript Single-Page Applications
+- JavaScript End-to-End Applications
 
 # Programing with C Sharp
 - Data Structure and Algoritms
