@@ -16,7 +16,9 @@
 # Programing with C Sharp
 - Data Structure and Algoritms
 
-# Hybrid Mobile Applications
+# Mobile Development
+- Hybrid Mobile Applications
+- Android Mobile Applications
 
 # Databases
 
