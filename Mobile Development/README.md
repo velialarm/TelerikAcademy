@@ -4,7 +4,7 @@
 
 # Mobile Development
 
--Android Mobile Applications
+- Android Mobile Applications
 - Hybrid Mobile Applications
 
 
