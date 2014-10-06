@@ -1,10 +1,10 @@
-/*require('../models/user');
-require('../models/message');*/
+var user = require('../models/user');
+var message = require('../models/message');
 
 var mongoose = require('mongoose');
 
-/*var User = mongoose.model('User');
-var Message = mongoose.model('Message');
+//var User = mongoose.model('User');
+//var Message = mongoose.model('Message');
 
 module.exports = {
     regiterUser: function(user){
@@ -16,4 +16,4 @@ module.exports = {
     getMessages: function (users, callback){
 
     }
-}*/
+}

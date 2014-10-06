@@ -1,13 +1,13 @@
 
 var mongoose = require('mongoose');
 
-var userSchema = mongoose.Schema({
-    user: { type: String, require: true, unique: true },
-    pass: { type: String, require: true }
-});
+module.exports.init = function(){
 
-var User = mongoose.model('User', userSchema);
+    var userSchema = mongoose.Schema({
+        user: { type: String, require: true, unique: true },
+        pass: { type: String, require: true }
+    });
 
-module.exports = function(){
-
+    var User = mongoose.model('User', userSchema);
 }
+
