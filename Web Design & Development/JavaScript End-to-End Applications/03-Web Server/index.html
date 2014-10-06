@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <title>File upload</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+	<style>
+body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 400px;
+	min-height: 35px;
+	margin: 0 auto;
+	padding: 30px;
+	border: 1px solid #CCC;
+}
+	</style>
+</head>
+<body>
+<div class="container">
+    <form action="http://localhost:9876/upload" enctype="multipart/form-data" method="post">
+        <label for="file">Select file: </label>
+        <input type="file" id="file" name="file-name">
+        <input type="submit" value="Upload">
+    </form>
+</div>	
+</body>
+</html>

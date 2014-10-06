@@ -1,0 +1,16 @@
+{
+  "name": "MongoChat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "VK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.9.5",
+    "mongoose": "^3.8.17"
+  }
+}
