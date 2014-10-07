@@ -1,0 +1,32 @@
+﻿<Window x:Class="MyFridgeWPFApplication.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Product" Height="249.78" Width="300">
+    <Grid Height="210" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <ListBox
+            Background="LightYellow"
+            Name="ProductList"
+            Grid.ColumnSpan="2">
+        </ListBox>
+        <Button
+            Grid.Column="0"
+            Grid.Row="1"
+            Background="LightSalmon"
+            Click="OnCloseButtonClick">Close
+        </Button>
+        <Button
+            Grid.Column="1"
+            Grid.Row="1"
+            Background="GreenYellow"
+            Click="OnAddButtonClick">Add
+        </Button>
+    </Grid>
+</Window>

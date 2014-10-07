@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyFridge.ArgumentNullOrWhitespaceException">
+    <Position X="0.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>ArgumentNullOrWhitespaceException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Beverage" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Beverage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Cereal" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cereal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Dairy" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dairy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Egg" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Egg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.FruitVegetable" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FruitVegetable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Legume" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Legume.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.LiquidFat" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LiquidFat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Meal" BaseTypeListCollapsed="true">
+    <Position X="8" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DCIAACAAAAAEABAUCAAABCQAAACEAIAAAAAgAABQIAA=</HashCode>
+      <FileName>Meal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MealType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Keys" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MyFridge.MealFlyweightFactory">
+    <Position X="8" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAgAAAABAAAAA=</HashCode>
+      <FileName>MealFlyweightFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="availableMeals" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MyFridge.MeatFish" Collapsed="true">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeatFish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Nut" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nut.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.PackagedFood" Collapsed="true">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="MyFridge.Product" ManuallyRouted="true">
+      <Path>
+        <Point X="11" Y="4" />
+        <Point X="11" Y="3.316" />
+        <Point X="4.25" Y="3.316" />
+        <Point X="4.25" Y="2.941" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PackagedFood.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Product">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAEAAAAAAQAAAEEAIAAAAAAACAAAEA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ShoppingUnit" />
+      <Property Name="FoodType" />
+      <Property Name="BaseUnit" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.373" />
+  </Class>
+  <Class Name="MyFridge.ProductFlyweightFactory">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEgAAAAAAAAAAAAAIAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductFlyweightFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.Refrigerator" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CCIAACAgAQAEABAQDAAABAQAACBAAAACAAAgAABQIAA=</HashCode>
+      <FileName>Refrigerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Keys" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Orientation="Left" Position="0.362" Collapsed="true" />
+  </Class>
+  <Class Name="MyFridge.ShoppingList" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DGIAACAAEAAEABAUCAAABAQAAAAAIAAAAAAgAABQIAA=</HashCode>
+      <FileName>ShoppingList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Keys" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MyFridge.Spice" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyFridge.WeekMenu" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DCIAAAAAAQAFABAUDAAABAQAAACAAIACAAAgAABQIAA=</HashCode>
+      <FileName>WeekMenu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Keys" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MyFridge.WeightFood" Collapsed="true">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="MyFridge.Product" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="4" />
+        <Point X="11" Y="3.333" />
+        <Point X="11.375" Y="3.333" />
+        <Point X="11.375" Y="2.941" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WeightFood.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="MyFridge.ShoppingUnit">
+    <Position X="10.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShoppingUnit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PackageType" />
+    </ShowAsAssociation>
+  </Struct>
+  <Interface Name="MyFridge.ICalculable">
+    <Position X="0.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICalculable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MyFridge.IFoodType">
+    <Position X="3" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IFoodType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MyFridge.IVegetarian">
+    <Position X="5.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVegetarian.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MyFridge.BaseUnit" Collapsed="true">
+    <Position X="12.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseUnit.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MyFridge.FoodType" Collapsed="true">
+    <Position X="12.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAQBAAA=</HashCode>
+      <FileName>FoodType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MyFridge.MealType" Collapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAACAAQAAAAAAAAAQAAAAgAAAAAA=</HashCode>
+      <FileName>MealType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MyFridge.ShoppingPackage" Collapsed="true">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACBAgAAAAAABABACAAAgBAAAAAAAAAAAAAIACAAAA=</HashCode>
+      <FileName>ShoppingPackage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="MyFridge.ChangedFridgeEventHandler" Collapsed="true">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Refrigerator.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="MyFridge.ChangedWeekMenuEventHandler" Collapsed="true">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WeekMenu.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

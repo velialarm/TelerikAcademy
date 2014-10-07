@@ -1,0 +1,12 @@
+Tomato|50
+Potato|500
+Onion|100
+Carrot|100
+Chicken|300
+Peanut|200
+White Cheese|500
+Water|500
+Sunflower Oil|10
+Rice|2000
+Salt|300
+Beans|1000

@@ -1,0 +1,74 @@
+﻿FruitVegetable|Tomato|2
+FruitVegetable|Cucumber|2
+FruitVegetable|Potato|1
+FruitVegetable|Pepper|2.50
+FruitVegetable|Onion|1.5
+FruitVegetable|Carrot|1.5
+FruitVegetable|Cabbage|0.64
+FruitVegetable|Garlic|4.62
+FruitVegetable|Leek|2.11
+FruitVegetable|Mushroom|4.37
+FruitVegetable|Eggplant|3.4
+FruitVegetable|Apple|1.36
+FruitVegetable|Pear|2.05
+FruitVegetable|Plum|0.96
+FruitVegetable|Cherry|2.87
+FruitVegetable|Sour Cherry|2.90
+FruitVegetable|Peach|1.4
+FruitVegetable|Apricot|1.4
+FruitVegetable|Strawberry|2.90
+FruitVegetable|Raspberry|3.80
+FruitVegetable|Grape|1.29
+FruitVegetable|Olive|5.48
+FruitVegetable|Melon|0.65
+FruitVegetable|Water Melon|0.50
+FruitVegetable|Pumpkin|0.67
+FruitVegetable|Marrow|0.95
+FruitVegetable|Lemon|2.45
+FruitVegetable|Banana|2.50
+FruitVegetable|Kiwi|2
+FruitVegetable|Orange|1.4
+FruitVegetable|Celery|1.1
+FruitVegetable|Raisin|5.25
+MeatFish|Chicken|6
+MeatFish|Pork|7.55
+MeatFish|Veal|10.50
+MeatFish|Lamb|11.65
+MeatFish|Rabbit|9
+MeatFish|Mince|5.88
+MeatFish|Mackerel|4.5
+MeatFish|Hake|6
+MeatFish|Salmon|22
+Egg|Egg|1
+Nut|Peanut|0.35
+Nut|Walnut|0.3
+Nut|Hazelnut|2
+Nut|Almond|1.5
+Dairy|White Cheese|8|1000|7
+Dairy|Yellow Cheese|8|1000|12.50
+Dairy|Butter|9|250|4
+Dairy|Milk|2|1000|1.95
+Dairy|Yoghurt|10|400|0.90
+Dairy|Cream|10|200|1.25
+Beverage|Water|1.5|0.8
+Beverage|Vinegar|0.7|0.85
+LiquidFat|Sunflower Oil|1|2.8
+Cereal|Rice|1000|2.90
+Cereal|Flour|1000|1
+Cereal|Pasta|400|2.44
+Cereal|Bread|650|1.00
+Legume|Beans|1000|2.25
+Legume|Lentil|1000|2.62
+Spice|Salt|1000|0.5
+Spice|Parsley|100|0.362
+Spice|Dill|100|0.380
+Spice|Vegeta|100|1.02
+Spice|Paprika|50|0.56
+Spice|Black Pepper|50|0.74
+Spice|Saleratus|100|0.90
+Spice|Savory|50|0.64
+Spice|Sugar|1000|2.18
+Spice|Honey|1000|7.97
+Spice|Tea|30|0.68
+Spice|Coffee|100|1.411
+Spice|Cocoa|100|1.060

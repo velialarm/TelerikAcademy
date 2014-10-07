@@ -1,0 +1,238 @@
+﻿Meal|Chopska Salad|0
+Tomato|150
+Cucumber|150
+Pepper|20
+Onion|20
+White Cheese|50
+Sunflower Oil|10
+Salt|3
+Meal|Mixed Salad|0
+Tomato|150
+Cucumber|150
+Onion|20
+Sunflower Oil|10
+Salt|5
+Meal|Chichen Soup|1
+Chicken|100
+Potato|50
+Pepper|20
+Onion|20
+Carrot|30
+Water|300
+Sunflower Oil|5
+Salt|3
+Meal|Fried Eggs|2
+Egg|200
+Salt|3
+Sunflower Oil|20
+Meal|Snejanka|0
+Cucumber|100
+Yoghurt|200
+Sunflower Oil|2
+Walnut|5
+Salt|3
+Dill|2
+Meal|Kjopoolu|0
+Eggplant|150
+Pepper|90
+Garlic|10
+Walnut|20
+Sunflower Oil|15
+Salt|3
+Meal|Cabbage and Carrot Salad|0
+Cabbage|200
+Carrot|100
+Lemon|10
+Sunflower Oil|10
+Salt|3
+Meal|Tarator|1
+Cucumber|100
+Yoghurt|100
+Water|100
+Sunflower Oil|2
+Walnut|5
+Salt|3
+Dill|2
+Meal|Beans Soup|1
+Beans|60
+Onion|20
+Carrot|10
+Flour|10
+Water|100
+Tomato|20
+Paprika|2
+Salt|3
+Meal|Lentil Soup|1
+Lentil|60
+Carrot|20
+Leek|20
+Water|100
+Flour|10
+Garlic|10
+Savory|3
+Vinegar|5
+Salt|3
+Meal|Beef Stew|1
+Veal|100
+Carrot|20
+Celery|20
+Potato|90
+Onion|30
+Tomato|20
+Salt|3
+Meal|Chicken with Rice|2
+Chicken|100
+Rice|50
+Onion|40
+Water|100
+Salt|3
+Sunflower Oil|5
+Meal|Chicken with Potato|2
+Chicken|100
+Potato|200
+Onion|30
+Sunflower Oil|5
+Salt|3
+Meal|Musaka|2
+Mince|100
+Potato|200
+Onion|30
+Sunflower Oil|5
+Salt|3
+Egg|34
+Milk|40
+Flour|5
+Black Pepper|3
+Paprika|5
+Meal|Chicken Fricassee|2
+Water|100
+Chicken|100
+Flour|50
+Sunflower Oil|5
+Salt|3
+Lemon|20
+Meal|Stuffed Peppers|2
+Pepper|150
+Mince|100
+Rice|20
+Onion|20
+Sunflower Oil|5
+Egg|10
+Yoghurt|40
+Black Pepper|2
+Salt|3
+Water|40
+Flour|10
+Meal|Meat Balls|2
+Mince|200
+Onion|20
+Bread|30
+Egg|5
+Savory|3
+Salt|3
+Sunflower Oil|3
+Meal|Pork Chop|2
+Pork|200
+Salt|3
+Meal|Chicken Steak|2
+Chicken|200
+Salt|3
+Meal|Roast Beef|2
+Veal|200
+Salt|3
+Meal|Mushrooms with Rice|2
+Rice|50
+Mushroom|60
+Onion|40
+Sunflower Oil|5
+Water|100
+Salt|3
+Meal|Marrow with Rice|2
+Rice|50
+Marrow|200
+Onion|40
+Sunflower Oil|5
+Water|100
+Salt|3
+Dill|3
+Meal|Cabbage with Rice|2
+Rice|50
+Cabbage|200
+Onion|30
+Water|100
+Sunflower Oil|5
+Paprika|5
+Salt|3
+Tomato|50
+Meal|Stuffed Peppers With Beans|2
+Pepper|50
+Beans|60
+Onion|40
+Savory|2
+Black Pepper|2
+Paprika|5
+Salt|3
+Tomato|20
+Meal|Lentil Stew|2
+Lentil|100
+Carrot|20
+Leek|20
+Water|50
+Flour|30
+Sunflower Oil|5
+Garlic|10
+Paprika|3
+Tomato|10
+Salt|3
+Meal|Beans Stew|2
+Beans|120
+Onion|20
+Tomato|50
+Sunflower Oil|5
+Paprika|3
+Flour|10
+Water|100
+Salt|3
+Meal|Cream Caramel|3
+Milk|100
+Egg|50
+Sugar|30
+Meal|Rice with Milk|3
+Rice|30
+Milk|200
+Sugar|30
+Meal|Baked Pasta|3
+Pasta|100
+Milk|100
+Egg|40
+Sugar|30
+Meal|Fruit Salad|3
+Banana|50
+Kiwi|50
+Apple|50
+Orange|50
+Raisin|10
+Cream|100
+Sugar|15
+Meal|Tea|4
+Tea|5
+Water|300
+Meal|Coffee|4
+Water|180
+Coffee|10
+Meal|Cocoa Milk|4
+Milk|280
+Cocoa|20
+Meal|Glass of Water|4
+Water|300
+Meal|Ayran|4
+Yoghurt|150
+Water|150
+Meal|Baked Pumpkin|3
+Pumpkin|200
+Sugar|30
+Meal|Baked Apples|3
+Apple|200
+Sugar|30
+Meal|Slice of Bread|2
+Bread|40

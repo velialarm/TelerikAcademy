@@ -1,0 +1,23 @@
+﻿Obligatory tasks: DONE
+------------------
+Exception class and exceptrion handling in the whole API;will be done by Hinka
+Events for change in fridge and menu; DONE
+Encapsulation of the fields of all the classes that have Dictionary<> field by making it private and adding public methods Add, Clear and Delete for manipulation; DONE PARTLY other part will be done by Hinka
+
+Other tasks: DONE
+------------------
+Serialization of Refrigerator on application exit; DONE
+Button and form for the generated shopping list which have to be printed to printer of file; DONE
+Button and form for composing week menu (meals and quantities of these meals); DONE
+Form for composing menu with filtering by isVegetarian property;DONE
+Button and form for editing refrigerator (add, delete, change item count); DONE
+Applying IFoodType interface in Meal class and WeekMenu class and Message Box connected with the compose menu form which appears when clicked OK;DONE
+
+Still not done:
+------------------- 
+1. Form for adding, editing or deleting Meals connected to the menu bar or/and button;
+2. Form for adding, editing or deleting Products connected to the menu bar or/and button;
+3. Print button for WeekMenu;
+4. Connections in the menu in the main window above the buttons;DONE
+5. Menu proposal - possible Meals only from the available products in the fridge;
+6. Other - whatever you like... 

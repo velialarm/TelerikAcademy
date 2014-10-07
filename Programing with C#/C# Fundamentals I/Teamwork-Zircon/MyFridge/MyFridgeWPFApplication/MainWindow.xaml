@@ -1,0 +1,55 @@
+﻿<Window x:Class="Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="My Fridge"
+        Height="350"
+        Width="525"
+        Background="LightYellow"
+        FontSize="20">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Week _menu">
+                <MenuItem Header="Co_mpose"
+                          Click="OnComposeMenuClick"/>
+                <MenuItem Header="Clear"
+                          Click="OnMenuWeekMenuClearClick"/>
+            </MenuItem>
+            <MenuItem Header="_Shopping list">
+                <MenuItem Header="_Generate"
+                          Click="OnGenerateShoppingListClick"/>
+            </MenuItem>
+            <MenuItem Header="Fridge">
+                <MenuItem Header="_Edit"
+                          Click="OnEditFridgeButtonClick"/>
+                <MenuItem Header="_Clear"
+                          Click="OnMenuClearFridgeClick"/>
+            </MenuItem>
+        </Menu>
+        <Canvas>
+        <Button Background="GreenYellow"
+                Height="100"
+                Width="270"
+                Canvas.Left="35" 
+                Canvas.Top="30"
+                Click="OnComposeMenuClick"
+                Name="ComposeMenuButton">Compose Menu
+        </Button>
+        <Button Background="LightSalmon"
+        	    Height="100"
+        	    Width="270"
+                Canvas.Left="35"
+                Canvas.Top="170"
+                Click="OnGenerateShoppingListClick"
+                Name="GenerateShoppingListButton">Generate Shopping List
+        </Button>
+        <Button Background="LightSkyBlue"
+        	    Height="240"
+        	    Width="140"
+                Canvas.Left="345"
+                Canvas.Top="30"
+                Click="OnEditFridgeButtonClick">Edit Fridge
+        </Button>
+            <TextBox Height="0" Name="hidden" Width="0" IsReadOnly="True" />
+    </Canvas>
+    </DockPanel>
+</Window>
