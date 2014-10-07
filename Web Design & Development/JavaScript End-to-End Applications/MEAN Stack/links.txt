@@ -1,0 +1,7 @@
+﻿Templates
+http://www.mean.io/
+http://meanjs.org/
+Tutorials
+http://scotch.io/
+http://www.thinkster.io/angularjs/GUIDJbpIie/angularjs-tutorial-learn-to-build-modern-web-apps
+http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/
