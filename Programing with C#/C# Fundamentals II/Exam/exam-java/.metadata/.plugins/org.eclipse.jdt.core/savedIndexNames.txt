@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+C:\Users\Master\Desktop\Teleric\c\.metadata\.plugins\org.eclipse.jdt.core
+51737260.index
+2351943997.index
+2742580890.index
+3587388905.index
+3716673929.index

@@ -1,0 +1,87 @@
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class DogeCoin {
+
+	private static int maxSum = 0;
+	private static int[][] data;
+
+	public static void main(String[] args) {
+		String dir = System.getProperty("user.dir");
+		String fileName = dir + "\\input.txt";
+		// System.out.println(fileName);
+		File f = new File(fileName);
+		if (f.exists()) {
+			try {
+				System.setIn(new BufferedInputStream(new FileInputStream(
+						fileName)));
+				System.setIn(new FileInputStream(fileName));
+			} catch (FileNotFoundException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		Scanner sc = new Scanner(System.in);
+
+		String[] line = sc.nextLine().split(" ");
+		int n = Integer.parseInt(line[0]);
+		int m = Integer.parseInt(line[1]);
+		int numberOfCoins = Integer.parseInt(sc.nextLine());
+		data = new int[n][m];
+		for (int i = 0; i < numberOfCoins; i++)
+		{
+			line = sc.nextLine().split(" ");
+			int row = Integer.parseInt(line[0]);
+			int col = Integer.parseInt(line[1]);
+			data[row][col] += 1;
+		}
+		findPaths(n - 1, m - 1, "");
+
+		Console.WriteLine(maxSum);
+		System.out.println(maxSum);
+	}
+
+	private static int findPaths(int n, int m, String path)
+	{
+		path = path + n + "," + m + "  ";
+		//path.Append(path).Append(down).Append(",").Append(right).Append(" ");
+		if (n == 0 && m == 0)
+		{
+			//Console.WriteLine(path);
+			//allMoves.Add(path);
+
+			String[] coordinates = path.split(" ");
+			int currentSum = 0;
+			for (int pos = 0; pos < coordinates.length; pos++)
+			{
+				String[] comm = coordinates[coordinates.length - pos - 1].split(" ");
+				int x = Integer.parseInt(comm[0]);
+				int y = Integer.parseInt(comm[1]);
+
+				//get sum from current cell in data
+				currentSum += data[x][y];
+			}
+			if (maxSum < currentSum)
+			{
+				maxSum = currentSum;
+			}
+
+
+			return 1;
+		}
+
+		int counter = 0;
+
+		if (n == 0)
+			counter = findPaths(n, m - 1, path);
+		else if (m == 0)
+			counter = findPaths(n - 1, m, path);
+		else
+			counter = findPaths(n, m - 1, path) + findPaths(n - 1, m, path);
+
+		return counter;
+	}
+}

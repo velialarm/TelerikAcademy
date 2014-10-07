@@ -1,0 +1,90 @@
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class StrangeLandNumbers {
+
+	//private static Map<String, int> numbers = new HashMap<>();
+
+	public static void main(String[] args) {
+		String dir = System.getProperty("user.dir");
+		String fileName = dir + "\\input.txt";
+		File f = new File(fileName);
+		if (f.exists()) {
+			try {
+				System.setIn(new BufferedInputStream(new FileInputStream(
+						fileName)));
+				System.setIn(new FileInputStream(fileName));
+			} catch (FileNotFoundException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		Scanner sc = new Scanner(System.in);
+
+		//InitDic();
+
+
+		Map<String,Integer> numbers = new HashMap<>();
+		numbers.put("f", 0);
+		numbers.put("bIN", 1);
+		numbers.put("oBJEC", 2);
+		numbers.put("mNTRAVL", 3);
+		numbers.put("lPVKNQ", 4);
+		numbers.put("pNWE", 5);
+		numbers.put("hT", 6);
+
+		String line = sc.nextLine();
+
+		List<Integer> resNum = new ArrayList<>();
+		for (int i = 0; i < line.length(); i++)
+		{
+			StringBuilder buffer = new StringBuilder();
+			String curChar = line.substring(i,1);
+			buffer.append(curChar);
+			if (numbers.containsKey(buffer.toString()))
+			{
+				int n = numbers[Integer.parseInt(buffer.toString())];
+				resNum.add(n);
+			}
+
+		}
+		BigInteger sum = BigInteger.valueOf(0);
+		for (int i = 0; i < resNum.size(); i++)
+		{
+			BigInteger stepen = Pow(resNum.size() - i - 1); 
+			BigInteger fnum = (BigInteger)resNum[i];
+			sum = BigInteger.Add(sum, (BigInteger.Multiply(fnum, stepen)));
+		}
+		Console.WriteLine(sum);
+
+	}
+	private static BigInteger Pow(int power)
+	{
+		BigInteger result = BigInteger.valueOf(1);
+		for (int i = 0; i < power; i++)
+		{
+			result = result.multiply(BigInteger.valueOf(7));
+		}
+		return result;
+	}
+
+
+	private static void InitDic() {
+
+		//        numbers.Add("f", 0);
+		//        numbers.Add("bIN", 1);
+		//        numbers.Add("oBJEC", 2);
+		//        numbers.Add("mNTRAVL", 3);
+		//        numbers.Add("lPVKNQ", 4);
+		//        numbers.Add("pNWE", 5);
+		//        numbers.Add("hT", 6);
+	}
+
+}
