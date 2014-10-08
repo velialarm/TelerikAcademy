@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapesheta", "Shapesheta\Shapesheta.csproj", "{7500CE4E-9E66-46E1-B303-A940CD7BA6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankata", "Bankata\Bankata.csproj", "{0B29EC32-9802-4FE7-9774-C55A01714C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exception", "Exception\Exception.csproj", "{1E185232-B1B5-4207-95C5-68A7CAA856E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7500CE4E-9E66-46E1-B303-A940CD7BA6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7500CE4E-9E66-46E1-B303-A940CD7BA6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7500CE4E-9E66-46E1-B303-A940CD7BA6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7500CE4E-9E66-46E1-B303-A940CD7BA6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B29EC32-9802-4FE7-9774-C55A01714C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B29EC32-9802-4FE7-9774-C55A01714C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B29EC32-9802-4FE7-9774-C55A01714C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B29EC32-9802-4FE7-9774-C55A01714C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E185232-B1B5-4207-95C5-68A7CAA856E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E185232-B1B5-4207-95C5-68A7CAA856E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E185232-B1B5-4207-95C5-68A7CAA856E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E185232-B1B5-4207-95C5-68A7CAA856E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
