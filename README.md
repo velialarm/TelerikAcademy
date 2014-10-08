@@ -14,7 +14,11 @@
 - JavaScript End-to-End Applications
 
 # Programing with C Sharp
-- Data Structure and Algoritms
+- C# Fundamentals I
+- C# Fundamentals II
+- Object Oriented Programming
+- High Quality Code
+- Data Structure and Аlgorithm
 
 # Mobile Development
 - Hybrid Mobile Applications
