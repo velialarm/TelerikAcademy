@@ -24,5 +24,7 @@
 - Hybrid Mobile Applications
 - Android Mobile Applications
 
-# Databases
+# Software engineering
+- Databases
+- Web Services and Cloud
 
