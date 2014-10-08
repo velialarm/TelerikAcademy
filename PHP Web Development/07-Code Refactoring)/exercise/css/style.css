@@ -1,0 +1,143 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #CCC;
+}
+
+#content {
+	background-color: #FFF;
+	width: 800px;
+	top: 0px;
+	left: 50%;
+	margin-left: -400px;
+	position: absolute;
+	padding: 10px;
+	bottom: 0px;
+}
+
+h1 {
+	display: block;
+	background-color: #333;
+	color: #FFF;
+	margin: 0px;
+	padding-left: 25px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 24px;
+	font-style: italic;
+}
+
+th {
+	background-color: #333;
+	color: #FFF;
+	padding: 5px;
+}
+
+#but_top {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#but_top a {
+	display: block;
+	background-color: #666;
+	float: left;
+	color: #FFF;
+	padding-top: 4px;
+	padding-right: 15px;
+	padding-bottom: 4px;
+	padding-left: 15px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	border: thin solid #000;
+}
+
+#but_top a:hover {
+	color: #000;
+	background-color: #CCC;
+}
+
+#new_autor_tbl {
+	width: 400px;
+	margin-top: 15px;
+}
+
+#no_au input {
+	display: block;
+}
+
+#no_au .aut_txt {
+	width: 400px;
+	margin-bottom: 5px;
+}
+
+#no_au .aut_b {
+	width: 400px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: #FFF;
+	background-color: #666;
+}
+
+#clear {
+	display: block;
+	clear: both;
+}
+
+#form_addBooks {
+	
+}
+
+#sel_books {
+	display: block;
+	width: 400px;
+}
+
+#inp_txt_b {
+	display: block;
+	width: 395px;
+	margin-bottom: 15px;
+}
+
+#inp_books_b {
+	display: block;
+	width: 400px;
+	margin-top: 15px;
+}
+
+#log_bs {
+	float: right;
+}
+
+.well_user {
+	float: right;
+	margin-right: 20px !important;
+	color: #900;
+}
+
+.bo_li {
+	color: #000;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-style: italic;
+}
+
+#book_name,#autors_name {
+	color: #666;
+	display: block;
+	border-left-width: 8px;
+	border-left-style: solid;
+	border-left-color: #999;
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+#autors_name {
+	margin-bottom: 15px;
+}
+
+.h_footer {
+	color: #E5E5E5;
+	font-size: 14px;
+	text-align: center;
+}
