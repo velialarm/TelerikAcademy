@@ -1,6 +1,8 @@
 INDEX VERSION 1.127+C:\TelerikAcademy\_PassCourseInAcademy\Mobile Development\Android Mobile Applications\06-Getting Started with Android\exersise\.metadata\.plugins\org.eclipse.jdt.core
-766254005.index
+1841404203.index
 600070372.index
+685948648.index
+1284074322.index
+766254005.index
 369293449.index
 2988355459.index
-1284074322.index
