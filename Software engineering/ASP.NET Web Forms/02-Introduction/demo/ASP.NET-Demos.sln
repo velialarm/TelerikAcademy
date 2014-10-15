@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30915.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. ASP.NET-HttpHandler-Demo", "ASP.NET-HttpHandler-Demo\2. ASP.NET-HttpHandler-Demo.csproj", "{74DB54D2-7955-40B7-B492-8A2ED139A87C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. ASP.NET-HttpModule-Demo", "ASP.NET-HttpModule-Demo\3. ASP.NET-HttpModule-Demo.csproj", "{4BA739DE-FA69-4B24-B8FD-408DBD7D485F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. ASP.NET-App-Lifecycle-Events", "ASP.NET-App-Lifecycle-Events\1. ASP.NET-App-Lifecycle-Events.csproj", "{A98DA274-2B74-4D53-84A7-227F72A78AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74DB54D2-7955-40B7-B492-8A2ED139A87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DB54D2-7955-40B7-B492-8A2ED139A87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DB54D2-7955-40B7-B492-8A2ED139A87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DB54D2-7955-40B7-B492-8A2ED139A87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA739DE-FA69-4B24-B8FD-408DBD7D485F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA739DE-FA69-4B24-B8FD-408DBD7D485F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA739DE-FA69-4B24-B8FD-408DBD7D485F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA739DE-FA69-4B24-B8FD-408DBD7D485F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98DA274-2B74-4D53-84A7-227F72A78AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98DA274-2B74-4D53-84A7-227F72A78AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98DA274-2B74-4D53-84A7-227F72A78AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98DA274-2B74-4D53-84A7-227F72A78AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

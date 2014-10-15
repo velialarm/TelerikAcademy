@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TelerikTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_something">Some...</string>
+    <integer name="maximum">100</integer>
+    <bool name="test">false</bool>
+
+</resources>
