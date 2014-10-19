@@ -1,0 +1,14 @@
+﻿body {
+    background-color: bisque;
+    color: darkgoldenrod;
+}
+.container {
+    margin: 0px auto;
+    width: 600px;
+}
+.desc {
+    padding: 20px;
+}
+.tb {
+    
+}
