@@ -1,0 +1,10 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    width: 800px;
+}
+.desc {
+    padding: 20px;
+}

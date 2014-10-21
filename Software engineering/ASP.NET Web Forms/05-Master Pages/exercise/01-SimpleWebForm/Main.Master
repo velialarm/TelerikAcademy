@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="_01_SimpleWebForm.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="content">
+        <p class="desc">Implement a simple Web Forms application using master pages. The application should be like a user profile –separate pages for Personal Info, Friends, Additional Info, etc. + Sidebar for navigation.</p>
+        <asp:ContentPlaceHolder ID="cphMain" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
