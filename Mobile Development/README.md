@@ -7,5 +7,6 @@
 - Android Mobile Applications
 - Hybrid Mobile Applications
 - iPhone &  iPad Mobile Applications
+- Windows Phone and Windows Store Applications
 
 

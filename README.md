@@ -24,6 +24,7 @@
 - Hybrid Mobile Applications
 - Android Mobile Applications
 - iPhone & iPad Mobile Applications
+- Windows Phone and Windows Store Applications
 
 # Software engineering
 - Databases
